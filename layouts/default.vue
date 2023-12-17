@@ -6,6 +6,7 @@
   <ConsultationModal :isOpen="isConsultationModalOpen" />
   <ConfirmModal :isOpen="isConfirmModalOpen" />
   <ScenarioModal :isOpen="isScenarioModalOpen" />
+  <CookieModal :isOpen="isCookieModalOpen" />
   <Footer />
 </div>
 </template>
@@ -29,6 +30,15 @@ export default defineComponent({
       toggleConsultationModal: () => this.toggleConsultation(),
       toggleConfirmModal: () => this.toggleConfirm(),
       toggleScenarioModal: () => this.toggleScenario(),
+      toggleCookieModal: () => this.toggleCookie(),
+    }
+  },
+
+  created() {
+    const data = typeof window !== 'undefined' ? localStorage.getItem('cookie') || '{}' : null
+    const cookie = JSON.parse(data)
+    if (cookie?.isApproved) {
+      this.isCookieModalOpen = false
     }
   },
 
@@ -38,18 +48,24 @@ export default defineComponent({
       isConsultationModalOpen: false,
       isConfirmModalOpen: false,
       isScenarioModalOpen: false,
+      isCookieModalOpen: true,
     }
   },
 
   methods: {
+    toggleCookie() {
+      this.isCookieModalOpen = !this.isCookieModalOpen
+      this.hideBodyOverflow(this.isCookieModalOpen)
+    },
+
     toggleShowRoom() {
       this.isShowRoomModalOpen = !this.isShowRoomModalOpen
       this.hideBodyOverflow(this.isShowRoomModalOpen)
     },
 
     toggleConsultation() {
-      this.isShowRoomModalOpen = !this.isShowRoomModalOpen
-      this.hideBodyOverflow(this.isShowRoomModalOpen)
+      this.isConsultationModalOpen = !this.isConsultationModalOpen
+      this.hideBodyOverflow(this.isConsultationModalOpen)
     },
 
     toggleConfirm() {
@@ -769,6 +785,7 @@ body {
     background: $dark-600;
     z-index: 2;
     transition: background .3s ease;
+    cursor: pointer;
 
     &.swiper-button-disabled {
       svg {

@@ -36,7 +36,7 @@
               <span>Без дротів</span>
             </div>
           </div>
-          <button class="banner__button-consultation button blue consultation">
+          <button class="banner__button-consultation button blue" @click="toggleConsultationModal">
             Безкоштовна Консультація
             <img src="~/assets/white-arrow-right.svg" alt="Icon">
           </button>
@@ -274,7 +274,10 @@ import Badge from "~/UI/Badge.vue";
 
 export default defineComponent({
   name: 'BannerSection',
-  components: {Badge}
+
+  components: {Badge},
+
+  inject: ['toggleConsultationModal']
 })
 </script>
 
@@ -381,6 +384,11 @@ export default defineComponent({
   }
 
   @media only screen and (min-width: 1160px) {
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
 
     span {
       font-size: 16px;

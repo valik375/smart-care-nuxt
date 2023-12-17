@@ -197,7 +197,7 @@
         <MobileLink url="/blog" @click="toggleMenu">Блог</MobileLink>
         <MobileLink url="/contacts" @click="toggleMenu">Контакти</MobileLink>
         <MobileLink href="tel:+380983125981">
-          <img src="~/assets/white-phone.svg" alt="Icon">
+          <img class="mobile-link__phone" src="~/assets/white-phone.svg" alt="Icon">
           +380 (98) 312-59-81
         </MobileLink>
 
@@ -233,7 +233,7 @@
               </svg>
             </Button>
           </template>
-          <template v-slot:body>
+          <template v-slot:body="props">
             <div class="services__wrapper">
               <div class="services__title">Безпека</div>
               <div class="services__list">
@@ -242,17 +242,20 @@
                   url="/"
                   text="Інтеграція зі службою охорони"
                   icon="white-shield"
+                  @click="props.toggleVisibility"
                 />
                 <DropdownLink
                   class="services__link"
                   url="/"
                   text="Інтеграція зі службою охорони"
                   icon="white-shield"
+                  @click="props.toggleVisibility"
                 />
               </div>
               <ArrowLink
                 url="/service?type=security"
                 text="Усі функції безпеки"
+                @click="props.toggleVisibility"
               />
             </div>
             <div class="services__wrapper">
@@ -263,11 +266,13 @@
                   url="/"
                   text="Контроль освітлення"
                   icon="white-light"
+                  @click="props.toggleVisibility"
                 />
               </div>
               <ArrowLink
                 url="/service?type=comfort"
                 text="Усі функції комфорту"
+                @click="props.toggleVisibility"
               />
             </div>
             <div class="services__calculate">
@@ -276,7 +281,7 @@
           </template>
         </SimpleDropdown>
         <DesktopLink url="/calculator">Розрахувати вартість</DesktopLink>
-        <SimpleDropdown>
+        <SimpleDropdown class="simple-dropdown__company">
           <template v-slot:trigger>
             <Button class="transparent">
               Компанія
@@ -292,27 +297,30 @@
               </svg>
             </Button>
           </template>
-          <template v-slot:body>
+          <template v-slot:body="props">
             <DropdownLink
-              url="/"
+              url="/about-us"
               text="Про нас"
               icon="white-info"
+              @click="props.toggleVisibility"
             />
             <DropdownLink
-              url="/"
+              url="/blog"
               text="Блог"
               icon="white-message"
+              @click="props.toggleVisibility"
             />
             <DropdownLink
               url="/contacts"
               text="Контакти"
               icon="white-phone"
+              @click="props.toggleVisibility"
             />
           </template>
         </SimpleDropdown>
       </div>
       <div class="header__right">
-        <DesktopLink href="tel:++380983125981">+380 (98) 312-59-81</DesktopLink>
+        <DesktopLink href="tel:+380983125981">+380 (98) 312-59-81</DesktopLink>
         <SimpleDropdown>
           <template v-slot:trigger>
             <Button class="gray">
@@ -395,6 +403,12 @@ export default defineComponent({
 <style scoped lang="scss">
 @import 'vars';
 
+.mobile-link__phone {
+  margin-right: 4px;
+}
+.simple-dropdown__company :deep(.simple-dropdown-body) {
+  max-width: 200px;
+}
 :deep(.header-desktop__service) {
   .simple-dropdown-body {
     width: 700px;
@@ -428,11 +442,9 @@ export default defineComponent({
     padding: 24px 32px;
   }
 }
-
 .header__wrapper.desktop .header__desktop-button {
   width: auto;
 }
-
 .header {
   width: 100%;
   position: fixed;
@@ -445,7 +457,6 @@ export default defineComponent({
     padding-top: 16px;
   }
 }
-
 .header__container {
   height: 52px;
   padding: 0 20px;
@@ -465,7 +476,6 @@ export default defineComponent({
     padding: 0 24px;
   }
 }
-
 .header__mobile-info {
   width: 100%;
   height: 32px;
@@ -509,7 +519,6 @@ export default defineComponent({
     display: none;
   }
 }
-
 .header__wrapper {
   width: 100%;
   height: 100%;
@@ -571,7 +580,6 @@ export default defineComponent({
     }
   }
 }
-
 .header__left {
   width: calc(100% - 180px);
 
@@ -582,7 +590,6 @@ export default defineComponent({
     height: 100%;
   }
 }
-
 .header__right {
   width: 180px;
   display: flex;
@@ -604,14 +611,12 @@ export default defineComponent({
     }
   }
 }
-
 .header__showroom {
 
   @media only screen and (min-width: 1160px) {
     max-width: 178px !important;
   }
 }
-
 .header__location-dropdown {
 
   @media only screen and (min-width: 1160px) {
@@ -619,7 +624,6 @@ export default defineComponent({
     margin-right: 12px;
   }
 }
-
 .header__logo {
   position: relative;
   display: flex;
@@ -646,185 +650,6 @@ export default defineComponent({
     margin-right: 32px;
   }
 }
-
-.header__link {
-
-  @media only screen and (min-width: 1160px) {
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 16px;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 22px;
-    color: $white;
-    border-radius: 8px;
-    transition: all .3s ease;
-    cursor: pointer;
-
-    &.simple-dropdown {
-      padding: 0;
-    }
-
-    &.menu-items {
-
-      .services-link__item {
-        width: 100%;
-        height: 48px;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        border-radius: 8px;
-        padding: 8px 12px 8px 8px;
-        overflow: hidden;
-        transition: all .3s ease;
-
-        img {
-          width: 32px;
-          height: 32px;
-          border-radius: 6px;
-          background: $dark-600;
-          padding: 5px;
-        }
-
-        span {
-          font-size: 14px;
-          font-weight: 700;
-          line-height: 160%;
-          color: $white;
-        }
-
-        &:hover {
-          background: $dark-700;
-        }
-      }
-    }
-
-    &.services {
-
-      .simple-dropdown-body {
-        width: 700px;
-        padding: 0;
-      }
-
-      .services-link__wrapper {
-        padding: 28px 24px 32px 24px;
-        border-bottom: 1px solid $dark-600;
-      }
-
-      .services-link__title {
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 150%;
-        letter-spacing: 0.12px;
-        text-transform: uppercase;
-        color: #616676;
-        padding-left: 8px;
-        margin-bottom: 12px;
-      }
-
-      .services-link__list {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 12px;
-      }
-
-      .services-link__item {
-        width: calc(50% - 6px);
-      }
-
-      .services-link__more {
-        display: flex;
-        align-items: center;
-        padding-left: 8px;
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 150%;
-        color: #84899A;
-        margin-top: 18px;
-      }
-
-      .services-link__calculate {
-        padding: 24px 32px;
-      }
-
-      .services-link__calculate-button {
-        width: 100%;
-        height: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-radius: 12px;
-        background: $dark-600;
-        padding: 0 10px;
-        transition: all .3s ease;
-
-        &:hover {
-          background: $dark-550;
-        }
-      }
-
-      .services-link__calculate-left {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-
-        svg {
-          width: 40px;
-          height: 40px;
-        }
-
-        span {
-          font-size: 12px;
-          font-weight: 700;
-          line-height: 150%;
-          letter-spacing: 0.12px;
-          text-transform: uppercase;
-          color: $white;
-        }
-      }
-
-      .services-link__calculate-right {
-        display: flex;
-        align-items: center;
-        gap: 4px;
-
-        svg {
-          width: 20px;
-          height: 20px;
-        }
-
-        span {
-          font-size: 12px;
-          font-weight: 700;
-          line-height: 150%;
-          letter-spacing: 0.12px;
-          text-transform: uppercase;
-          color: $blue;
-        }
-      }
-    }
-
-    &.company {
-
-      .simple-dropdown-body {
-        width: 200px;
-      }
-    }
-
-    &.phone {
-      margin-right: 10px;
-    }
-
-    &:hover {
-      background: lighten($dark-900, 10%);
-    }
-  }
-}
-
 .header__burger {
   min-width: 32px;
   min-height: 32px;
@@ -850,7 +675,6 @@ export default defineComponent({
     margin: 4px 0;
   }
 }
-
 .header__nav-button {
   max-width: 140px;
 
@@ -860,7 +684,6 @@ export default defineComponent({
     margin-left: 12px;
   }
 }
-
 .header__menu {
   width: 100%;
   height: calc(100vh - 96px);
@@ -875,18 +698,15 @@ export default defineComponent({
   opacity: 0;
   overflow: auto;
 }
-
 .header__actions {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 24px;
 }
-
 .header__location-dropdown {
   width: calc(50% - 6px);
 }
-
 .header__location-item {
   width: 100%;
   display: flex;
@@ -906,7 +726,6 @@ export default defineComponent({
     margin-right: 4px;
   }
 }
-
 .header__location-info {
   border-radius: 8px;
   background: $dark-700;
@@ -928,11 +747,9 @@ export default defineComponent({
     color: $dark-300;
   }
 }
-
 .header__showroom {
   max-width: calc(50% - 6px);
 }
-
 .header__menu-link {
   width: 100%;
   display: flex;
@@ -955,7 +772,6 @@ export default defineComponent({
     }
   }
 }
-
 .header__menu-action-wrapper {
   width: 100%;
   background: $dark-800;
@@ -968,7 +784,6 @@ export default defineComponent({
     transform: translateX(0) !important;
   }
 }
-
 .header__menu-action-title {
   font-size: 17px;
   font-weight: 700;
@@ -976,34 +791,13 @@ export default defineComponent({
   margin-bottom: 24px;
   color: $white;
 }
-
 .header__accordion-chevron {
   transform: rotate(90deg);
   transition: all .3s ease;
 }
-
-.header__accordion {
-
-  &.active {
-    .header__accordion-body {
-      max-height: 900px;
-    }
-    .header__accordion-chevron {
-      transform: rotate(-90deg);
-    }
-  }
-}
-
-.header__accordion-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: all .3s ease;
-}
-
 .header__accordion-section {
   padding: 16px 8px;
 }
-
 .header__accordion-title {
   font-size: 12px;
   font-weight: 700;
@@ -1012,92 +806,5 @@ export default defineComponent({
   color: #616676;
   text-transform: uppercase;
   margin-bottom: 12px;
-}
-
-.header__accordion-link {
-  width: 100%;
-  height: 48px;
-  display: flex;
-  align-items: center;
-
-  .header__accordion-icon {
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 6px;
-    background: $dark-600;
-    margin-right: 12px;
-
-    img {
-      width: 20px;
-      height: 20px;
-    }
-  }
-
-  span {
-    font-size: 13px;
-    font-weight: 700;
-    line-height: 150%;
-    color: $white;
-  }
-}
-
-.header__accordion-more {
-  width: 100%;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  margin-top: 8px;
-
-  span {
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 150%;
-    color: #84899A;
-    margin-right: 4px;
-  }
-}
-
-.header__accordion-calculator {
-  width: 100%;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 8px;
-  border-radius: 12px;
-  background: $dark-600;
-}
-
-.header__accordion-calculator-left {
-  display: flex;
-  align-items: center;
-
-  span {
-    font-size: 10px;
-    font-weight: 700;
-    line-height: 160%;
-    letter-spacing: 0.1px;
-    color: $white;
-    text-transform: uppercase;
-    margin-left: 8px;
-  }
-}
-
-.header__accordion-calculator-right {
-  display: flex;
-  align-items: center;
-
-  span {
-    font-size: 10px;
-    font-weight: 700;
-    line-height: 160%;
-    letter-spacing: 0.1px;
-    text-transform: uppercase;
-    color: $blue;
-    margin-right: 4px;
-  }
 }
 </style>

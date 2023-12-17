@@ -217,6 +217,9 @@ export default defineComponent({
 <style scoped lang="scss">
 @import 'vars';
 
+.portfolioSwiper {
+  overflow: visible;
+}
 :deep(.swiper-wrapper) {
   transform: translate3d(0px, 0, 0);
 
@@ -226,8 +229,10 @@ export default defineComponent({
 }
 
 .about-us-portfolio__title-wrapper {
+  width: 100%;
+  max-width: 620px;
   text-align: center;
-  margin-bottom: 32px;
+  margin: 0 auto 32px;
 }
 
 .about-us-portfolio__swiper-wrapper {

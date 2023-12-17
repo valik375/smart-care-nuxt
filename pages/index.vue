@@ -1,5 +1,7 @@
 <template>
+  <Loader v-if="!isLoaded"/>
   <BannerSection/>
+  <ProductsSection />
   <StatisticsSection/>
   <ServiceSection/>
   <FeaturesSection/>
@@ -7,12 +9,11 @@
   <ProcessesAutomationSection />
   <AnimationSection />
   <ConvenientControlSection />
-  <AdvantagesSection />
-  <StatisticsSection/>
-  <WirelessSystemSection />
-  <ProductsSection />
+  <Portfolio class="home-portfolio" />
   <SaveBillSection />
+  <StatisticsSection/>
   <HaveQuestionsSection />
+  <BlogSection />
   <BuildSystemSection />
 </template>
 
@@ -26,22 +27,25 @@ import AntiFloodSection from "~/components/indexSections/AntiFloodSection.vue";
 import ProcessesAutomationSection from "~/components/indexSections/ProcessesAutomationSection.vue";
 import AnimationSection from "~/components/indexSections/AnimationSection.vue";
 import ConvenientControlSection from "~/components/indexSections/ConvenientControlSection.vue";
-import AdvantagesSection from "~/components/indexSections/AdvantagesSection.vue";
-import WirelessSystemSection from "~/components/indexSections/WirelessSystemSection.vue";
 import ProductsSection from "~/components/indexSections/ProductsSection.vue";
 import SaveBillSection from "~/components/indexSections/SaveBillSection.vue";
 import HaveQuestionsSection from "~/components/indexSections/HaveQuestionsSection.vue";
 import BuildSystemSection from "~/components/indexSections/BuildSystemSection.vue";
+import Loader from "~/UI/Loader.vue";
+import Portfolio from "~/components/aboutUsSections/Portfolio.vue";
+import BlogSection from "~/components/indexSections/BlogSection.vue";
 
 export default defineComponent({
   name: 'Index',
+
   components: {
+    BlogSection,
+    Portfolio,
+    Loader,
     BuildSystemSection,
     HaveQuestionsSection,
     SaveBillSection,
     ProductsSection,
-    WirelessSystemSection,
-    AdvantagesSection,
     ConvenientControlSection,
     AnimationSection,
     ProcessesAutomationSection,
@@ -51,10 +55,41 @@ export default defineComponent({
     StatisticsSection,
     BannerSection
   },
+
+  setup() {
+    useSeoMeta({
+      title: 'Розумний будинок під ключ - Монтаж системи розумного будинку в Києві, Україні | Smart Care',
+      description: "⏩️ Замовити систему Розумний будинок під ключ ⭐ Установка Розумного будинку в квартирі або котеджі з гарантією ✅ Індивідуальне проєктування і монтаж системи ✅ Підбір обладнання та обслуговування | Smart Care",
+      ogTitle: 'Smart Care | Головна',
+      ogDescription: 'Бездротовий розумний будинок твоєї мрії',
+      ogImage: 'https://www.thecaresmart.com/assets/min-blue-logo.svg',
+    })
+  },
+
+  created() {
+    setTimeout(() => {
+      this.isLoaded = true
+    }, 500)
+  },
+
+  data() {
+    return {
+      isLoaded: false
+    }
+  }
 })
 </script>
 
-<style scoped lang="scss">
-@import 'vars';
+<style lang="scss" scoped>
+.home-portfolio {
+  padding-top: 50px;
 
+  @media only screen and (min-width: 760px) {
+    font-size: 100px;
+  }
+
+  @media only screen and (min-width: 1160px) {
+    font-size: 150px;
+  }
+}
 </style>

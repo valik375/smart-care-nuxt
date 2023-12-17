@@ -9,7 +9,7 @@
           віддана перетворенню будинків у розумні простори. Завдяки передовим системам управління, ми забезпечуємо
           безпеку, комфорт та ефективність вашого житла, надаючи унікальний досвід розумного життя."
         />
-        <button class="about-us-history__button button blue consultation" type="button">
+        <button class="about-us-history__button button blue" @click="toggleConsultationModal">
           <span>Замовити консультацію</span>
           <img src="~/assets/white-arrow-right.svg" alt="Arrow Icon">
         </button>
@@ -30,7 +30,9 @@ export default defineComponent({
 
   components: {
     SectionTitle
-  }
+  },
+
+  inject: ['toggleConsultationModal']
 })
 </script>
 

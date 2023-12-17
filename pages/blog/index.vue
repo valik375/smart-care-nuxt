@@ -11,20 +11,22 @@
       <div class="blog-list__wrapper post-list">
 
         <article class="blog-list__item post-list__item card">
-          <div class="post-list__item-image">
-            <img src="~/assets/anti-flood-image.png" alt="Blog item">
-          </div>
-          <div class="post-list__date text">12 грудня, 2023</div>
-          <div class="post-list__title">Скільки можна заощадити на комунальних платіжках завдяки смарт будинку?</div>
-          <div class="post-list__author">
-            <div class="post-list__author-left">
-              <img src="~/assets/about-us-team-3.png" alt="Person image">
+          <NuxtLink to="/blog/test-page">
+            <div class="post-list__item-image">
+              <img src="~/assets/anti-flood-image.png" alt="Blog item">
             </div>
-            <div class="post-list__author-right">
-              <div class="post-list__author-name">Кирило Важинський</div>
-              <div class="post-list__author-position text">Головний майстер монтажу Smart Care</div>
+            <div class="post-list__date text">12 грудня, 2023</div>
+            <div class="post-list__title">Скільки можна заощадити на комунальних платіжках завдяки смарт будинку?</div>
+            <div class="post-list__author">
+              <div class="post-list__author-left">
+                <img src="~/assets/about-us-team-3.png" alt="Person image">
+              </div>
+              <div class="post-list__author-right">
+                <div class="post-list__author-name">Кирило Важинський</div>
+                <div class="post-list__author-position text">Головний майстер монтажу Smart Care</div>
+              </div>
             </div>
-          </div>
+          </NuxtLink>
         </article>
 
       </div>

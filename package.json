@@ -11,13 +11,18 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@nuxtjs/google-analytics": "^2.4.0",
     "nuxt": "^3.8.2",
+    "nuxt-simple-sitemap": "^4.1.17",
     "sass": "^1.69.5",
     "vue": "^3.3.10",
     "vue-router": "^4.2.5"
   },
   "dependencies": {
     "nuxt-swiper": "^1.2.2",
-    "scss": "^0.2.4"
+    "nuxt3-meta-pixel": "^1.0.9",
+    "scss": "^0.2.4",
+    "vite-plugin-dynamic-import": "^1.5.0",
+    "vite-plugin-require": "^1.1.14"
   }
 }

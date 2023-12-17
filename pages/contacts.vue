@@ -1,4 +1,5 @@
 <template>
+  <Loader v-if="!isLoaded" />
   <section class="contact-us-banner">
     <div class="contact-us-banner__container container">
       <div class="contact-us-banner__wrapper">
@@ -41,11 +42,13 @@ import viberIcon from '~/assets/viber-icon.svg'
 import telegramIcon from '~/assets/telegram-icon.svg'
 import whiteEmail from '~/assets/white-email.svg'
 import whiteLocation from '~/assets/white-location.svg'
+import Loader from "~/UI/Loader.vue";
 
 export default defineComponent({
   name: 'Contacts',
 
   components: {
+    Loader,
     ContactCard,
     Map,
     SectionTitle
@@ -53,8 +56,15 @@ export default defineComponent({
 
   inject: ['toggleShowRoomModal', 'toggleConsultationModal'],
 
+  created() {
+    setTimeout(() => {
+      this.isLoaded = true
+    }, 500)
+  },
+
   data() {
     return {
+      isLoaded: false,
       contactCards: [
         {
           type: 'phone',
@@ -94,10 +104,6 @@ export default defineComponent({
         }
       ]
     }
-  },
-
-  methods: {
-
   }
 })
 </script>

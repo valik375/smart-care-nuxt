@@ -1,4 +1,5 @@
 <template>
+  <Loader v-if="!isLoaded" />
   <section class="service-page comfort">
     <div class="service-page__container container bg-lines">
       <Tabs class="service-page__tabs" :list="tabs">
@@ -35,15 +36,17 @@
 </template>
 
 <script>
-import {defineComponent} from 'vue'
+import { defineComponent } from 'vue'
 import Tabs from "~/UI/Tabs.vue";
 import ServiceCard from "~/UI/ServiceCard.vue";
 import BuildSystemSection from "~/components/indexSections/BuildSystemSection.vue";
+import Loader from "~/UI/Loader.vue";
 
 export default defineComponent({
   name: 'Security',
 
   components: {
+    Loader,
     BuildSystemSection,
     ServiceCard,
     Tabs
@@ -52,10 +55,14 @@ export default defineComponent({
   mounted() {
     this.activeList = this.serviceList['security']
     this.updateTemplate(this.$route.query.type)
+    setTimeout(() => {
+      this.isLoaded = true
+    }, 500)
   },
 
   data() {
     return {
+      isLoaded: false,
       sectionTitle: '',
       sectionText: '',
       tabs: [

@@ -3,6 +3,12 @@
     <div class="build-system__container container bg-lines">
 
       <div class="build-system__info">
+        <div v-if="price" class="banner__badge">
+          <div class="banner__badge-icon">
+            <img src="~/assets/white-dollar.svg" alt="Dollar Icon">
+          </div>
+          <div class="banner__text">Ціна під ключ Від {{ price }}$</div>
+        </div>
         <SectionTitle
           class="build-system__title-wrapper"
           :subtitle="subtitle"
@@ -43,6 +49,10 @@ export default defineComponent({
   inject: ['toggleConsultationModal'],
 
   props: {
+    price: {
+      type: String,
+      default: ''
+    },
     subtitle: {
       type: String,
       default: 'Побудуйте розумну Автоматизовану систему'
@@ -77,6 +87,49 @@ export default defineComponent({
 
 <style scoped lang="scss">
 @import 'vars';
+
+.banner__badge {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px 4px;
+  border-radius: 40px;
+  background: $dark-700;
+  margin: 0 auto 12px;
+
+  @media only screen and (min-width: 1160px) {
+    padding: 8px 12px 8px;
+    margin: 0 auto 16px;
+  }
+}
+.banner__badge-icon {
+  width: 40px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #5B8CA1;
+  border-radius: 30px;
+  margin-right: 8px;
+
+  img {
+    width: 16px;
+    height: 16px;
+  }
+}
+.banner__text {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 160%;
+  letter-spacing: 0.1px;
+  text-transform: uppercase;
+  color: $white;
+
+  @media only screen and (min-width: 1160px) {
+    font-size: 12px;
+  }
+}
 
 .build-system {
   padding: 48px 0;

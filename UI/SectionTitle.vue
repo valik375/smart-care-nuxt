@@ -70,4 +70,11 @@ export default defineComponent({
     }
   }
 }
+.section-title__text {
+  font-size: 15px;
+
+  @media only screen and (min-width: 1160px) {
+    font-size: 16px;
+  }
+}
 </style>

@@ -1,19 +1,23 @@
 <template>
   <div class="badge" :class="type">
-    <img v-if="imageUrl" :src="imageUrl" alt="">
+    <AsyncImage v-if="icon" :svg="icon" alt="Icon" />
+<!--    <img v-if="url" :src="url" alt="">-->
     <span>{{ text }}</span>
   </div>
 </template>
 
 <script>
 import {defineComponent} from 'vue'
+import AsyncImage from "~/UI/AsyncImage.vue";
 
 export default defineComponent({
   name: 'Badge',
+  components: {AsyncImage},
 
   props: {
     icon: {
-      type: String
+      type: String,
+      default: ''
     },
     text: {
       type: String,
@@ -25,18 +29,18 @@ export default defineComponent({
     }
   },
 
-  async mounted() {
-    if (this.icon) {
-      const imageModule = await import(`~/assets/${this.icon}.svg`)
-      this.imageUrl = imageModule.default
-    }
-  },
-
-  data() {
-    return {
-      imageUrl: ''
-    }
-  },
+  // async created() {
+  //   if (this.icon) {
+  //     const image = await import(`~/assets/${this.icon}.svg`)
+  //     this.url = await image.default
+  //   }
+  // },
+  //
+  // data() {
+  //   return {
+  //     url: ''
+  //   }
+  // }
 })
 </script>
 

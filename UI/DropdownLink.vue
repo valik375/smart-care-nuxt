@@ -1,7 +1,7 @@
 <template>
   <NuxtLink class="dropdown-link" :to="url">
     <span class="dropdown-link-icon">
-      <img :src="imageUrl" :alt="text">
+      <AsyncImage :svg="icon" :alt="text"/>
     </span>
     <span>{{ text }}</span>
   </NuxtLink>
@@ -9,9 +9,11 @@
 
 <script>
 import {defineComponent} from 'vue'
+import AsyncImage from "~/UI/AsyncImage.vue";
 
 export default defineComponent({
   name: 'DropdownLink',
+  components: {AsyncImage},
 
   props: {
     url: {
@@ -25,18 +27,7 @@ export default defineComponent({
       type: String,
       default: ''
     }
-  },
-
-  async mounted() {
-    const imageModule = await import(`~/assets/${this.icon}.svg`)
-    this.imageUrl = imageModule.default
-  },
-
-  data() {
-    return {
-      imageUrl: ''
-    }
-  },
+  }
 })
 </script>
 

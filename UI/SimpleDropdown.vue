@@ -4,7 +4,7 @@
      <slot name="trigger" />
     </div>
     <div class="simple-dropdown-body">
-      <slot name="body"/>
+      <slot name="body" :toggleVisibility="toggleVisibility"/>
     </div>
   </div>
 </template>

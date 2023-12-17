@@ -1,4 +1,5 @@
 <template>
+  <Loader v-if="!isLoaded" />
   <Banner @openModal="toggleVisibility"/>
   <CalculatorModal :isOpen="isModalOpen"/>
 </template>
@@ -7,10 +8,12 @@
 import {defineComponent} from 'vue'
 import Banner from "~/components/calculatorSections/Banner.vue";
 import CalculatorModal from "~/components/calculatorSections/CalculatorModal.vue";
+import Loader from "~/UI/Loader.vue";
 
 export default defineComponent({
   name: 'Calculator',
   components: {
+    Loader,
     CalculatorModal,
     Banner
   },
@@ -21,8 +24,15 @@ export default defineComponent({
     }
   },
 
+  created() {
+    setTimeout(() => {
+      this.isLoaded = true
+    }, 500)
+  },
+
   data() {
     return {
+      isLoaded: false,
       isModalOpen: false
     }
   },

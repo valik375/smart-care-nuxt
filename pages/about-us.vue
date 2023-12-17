@@ -1,4 +1,5 @@
 <template>
+  <Loader v-if="!isLoaded" />
   <Banner />
   <Portfolio />
   <Team />
@@ -17,11 +18,13 @@ import History from "~/components/aboutUsSections/History.vue";
 import ProductsSection from "~/components/indexSections/ProductsSection.vue";
 import AdvantagesSection from "~/components/indexSections/AdvantagesSection.vue";
 import Showroom from "~/components/aboutUsSections/Showroom.vue";
+import Loader from "~/UI/Loader.vue";
 
 export default defineComponent({
   name: 'AboutUs',
 
   components: {
+    Loader,
     Showroom,
     AdvantagesSection,
     ProductsSection,
@@ -31,19 +34,16 @@ export default defineComponent({
     Portfolio
   },
 
-  data() {
-    return {
-
-    }
+  created() {
+    setTimeout(() => {
+      this.isLoaded = true
+    }, 500)
   },
 
-  methods: {
-
+  data() {
+    return {
+      isLoaded: false
+    }
   }
 })
 </script>
-
-<style scoped lang="scss">
-@import 'vars';
-
-</style>

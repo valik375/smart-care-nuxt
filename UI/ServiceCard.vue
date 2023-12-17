@@ -1,9 +1,9 @@
 <template>
   <div class="service-page__item card">
     <div class="service-page__item-wrapper">
-      <img class="service-page__item-bg" :src="imageUrl" alt="BG image">
+      <AsyncImage class="service-page__item-bg" :img="service.image" alt="BG image" />
       <div class="service-page__item-icon">
-        <img :src="iconUrl" alt="Icon">
+        <AsyncImage :svg="service.icon" alt="Icon" />
       </div>
     </div>
     <div class="service-page__item-body">
@@ -34,11 +34,13 @@
 <script>
 import {defineComponent} from 'vue'
 import Badge from "~/UI/Badge.vue";
+import AsyncImage from "~/UI/AsyncImage.vue";
 
 export default defineComponent({
   name: 'ServiceCard',
 
   components: {
+    AsyncImage
 
   },
 
@@ -46,20 +48,6 @@ export default defineComponent({
     service: {
       type: Object,
       default: () => {}
-    }
-  },
-
-  async mounted() {
-    const iconModule = await import(`~/assets/${this.service.icon}.svg`)
-    const imageModule = await import(`~/assets/${this.service.image}.png`)
-    this.iconUrl = await iconModule.default
-    this.imageUrl = await imageModule.default
-  },
-
-  data() {
-    return {
-      iconUrl: null,
-      imageUrl: null
     }
   }
 })
