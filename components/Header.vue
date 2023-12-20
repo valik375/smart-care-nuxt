@@ -97,7 +97,7 @@
           <template v-slot:trigger>
             <div class="header__menu-link">
               <span class="header__menu-link-text">Послуги</span>
-              <img class="header__accordion-chevron" src="~/assets/min-white-arrow-right.svg" alt="Icon">
+              <img class="header__accordion-chevron chevron" src="~/assets/min-white-arrow-right.svg" alt="Icon">
             </div>
           </template>
           <template v-slot:body>
@@ -189,7 +189,9 @@
                 @click="toggleMenu"
               />
             </div>
-            <CalculateButton @click="toggleMenu"/>
+            <div class="header__calculator-wrapper">
+              <CalculateButton @click="toggleMenu"/>
+            </div>
           </template>
         </Accordion>
         <MobileLink url="/calculator" @click="toggleMenu">Розрахувати вартість</MobileLink>
@@ -691,7 +693,7 @@ export default defineComponent({
   left: 0;
   top: 96px;
   background: $dark-900;
-  padding: 24px 20px 0 20px;
+  padding: 24px 20px 20px 20px;
   transition: all .3s ease;
   transform: translateY(100px);
   pointer-events: none;
@@ -797,6 +799,11 @@ export default defineComponent({
 }
 .header__accordion-section {
   padding: 16px 8px;
+}
+.header__calculator-wrapper {
+  padding-bottom: 32px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid $dark-700;
 }
 .header__accordion-title {
   font-size: 12px;

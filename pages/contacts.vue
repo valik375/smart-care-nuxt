@@ -100,6 +100,7 @@ export default defineComponent({
           icon: whiteLocation,
           title: 'Шоурум',
           text: 'м. Київ, вул. Вишняковська 2, ПН – ПТ, 10:00 – 18:00',
+          cta: true,
           handler: () => this.toggleShowRoomModal()
         }
       ]
@@ -153,6 +154,7 @@ export default defineComponent({
 
   @media only screen and (min-width: 1160px) {
     max-width: 200px;
+    margin-top: 32px;
   }
 }
 
@@ -175,7 +177,7 @@ export default defineComponent({
   position: relative;
   cursor: pointer;
 
-  &.phone,
+  &.telegram,
   &.viber {
     width: calc(50% - 4px);
   }

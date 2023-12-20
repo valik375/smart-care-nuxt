@@ -87,6 +87,10 @@ export default defineComponent({
   margin-bottom: 24px;
 }
 
+.about-us-location__title {
+  margin-bottom: 12px;
+}
+
 .about-us-location__map {
   width: 100%;
   height: 430px;
@@ -161,6 +165,11 @@ export default defineComponent({
   border-radius: 8px;
   background: $dark-600;
   margin-bottom: 16px;
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
 
   @media only screen and (min-width: 1160px) {
     width: 40px;

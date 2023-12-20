@@ -41,6 +41,9 @@ export default defineComponent({
     .accordion__chevron {
       transform: rotate(-90deg);
     }
+    :deep(.chevron) {
+      transform: rotate(270deg);
+    }
   }
 }
 .accordion__body {

@@ -72,12 +72,6 @@ export default defineComponent({
   border: 1px solid #2e3038;
   margin-bottom: 12px;
 }
-.calculator-modal__template-room__name {
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 155%;
-  color: #eeeff1;
-}
 .calculator-modal__template-room {
   width: 100%;
   display: flex;
@@ -93,6 +87,12 @@ export default defineComponent({
   font-weight: 700;
   line-height: 155%;
   color: #eeeff1;
+
+  @media only screen and (min-width: 760px) {
+    :deep(br) {
+      display: none;
+    }
+  }
 }
 .calculator-modal__template-counter {
   min-width: 100px;

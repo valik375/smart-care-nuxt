@@ -325,14 +325,6 @@ export default defineComponent({
   font-size: 15px;
 }
 
-.image-template {
-  margin-top: 24px;
-
-  @media only screen and (min-width: 760px) {
-    padding: 32px;
-  }
-}
-
 .image-template__image {
   width: 100%;
   height: 160px;

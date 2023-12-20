@@ -25,25 +25,33 @@
 
         <div class="save-bills__dropdown-list dropdown-list">
           <CardDropdown
-            active
+            :id="0"
+            :isActive="activeDropdown"
             index="01"
             title="Заощаджуйте до 40% на рахунках за електроенергію"
             text="За допомогою додатку ви зможете ідентифікувати енергозатратні пристрої та оптимізувати їх роботу,
               розподіляючи енергію в найефективніший спосіб. Це дозволить суттєво знизити витрати, що сприятиме
               економії вашого бюджету."
+            @toggleVisibility="activeDrop"
           />
           <CardDropdown
+            :id="1"
+            :isActive="activeDropdown"
             index="02"
             title="Окупіть систему вже через 2 роки"
             text="Розумний будинок - це ще й вигідна інвестиція! Заощадження, отримані завдяки оптимізації споживання,
               дозволять вам швидко окупити витрати на систему. Ви отримаєте не тільки комфорт та безпеку, але
               й вигоду фінансової раціональності."
+            @toggleVisibility="activeDrop"
           />
           <CardDropdown
+            :id="2"
+            :isActive="activeDropdown"
             index="03"
             title="Отримуйте персоналізовані звіти та рекомендації"
             text="Додаток надає персоналізовані рекомендації щодо оптимізації споживання та зменшення витрат. Ви зможете
               встановлювати цілі, відстежувати свій прогрес та отримувати цінні поради щодо зниження споживання ресурсів."
+            @toggleVisibility="activeDrop"
           />
         </div>
       </div>
@@ -59,7 +67,20 @@ import CardDropdown from "~/UI/CardAccordion.vue";
 
 export default defineComponent({
   name: 'SaveBillSection',
-  components: {CardDropdown, SectionTitle}
+
+  components: {CardDropdown, SectionTitle},
+
+  data() {
+    return {
+      activeDropdown: 0
+    }
+  },
+
+  methods: {
+    activeDrop(index) {
+      this.activeDropdown = index
+    }
+  }
 })
 </script>
 

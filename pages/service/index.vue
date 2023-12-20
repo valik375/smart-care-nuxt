@@ -2,9 +2,11 @@
   <Loader v-if="!isLoaded" />
   <section class="service-page comfort">
     <div class="service-page__container container bg-lines">
+      <BreadCrumbs class="service-page__breadcrumbs" :list="[{ name: sectionTitle, path: '/service' }]" />
+
       <Tabs class="service-page__tabs" :list="tabs">
         <template v-slot:tabItem="{ tab }">
-          <div v-html="tab.icon"></div>
+          <div class="service-page__tab-icon" v-html="tab.icon"></div>
           <span>{{ tab.text }}</span>
         </template>
       </Tabs>
@@ -198,7 +200,7 @@ export default defineComponent({
   padding: 180px 0 0 0;
 
   @media only screen and (min-width: 1160px) {
-    padding: 240px 0 0 0;
+    padding: 190px 0 0 0;
 
     :deep(.service-page__build-system  .section-title__title) {
       font-size: 28px !important;
@@ -215,7 +217,9 @@ export default defineComponent({
   padding-bottom: 40px;
   border-radius: 0 0 40px 40px;
 }
-
+.service-page__breadcrumbs {
+  margin-bottom: 12px;
+}
 .service-page__tabs {
   width: 100%;
   max-width: 280px;
@@ -226,7 +230,9 @@ export default defineComponent({
   padding: 6px;
   border-radius: 10px;
 }
-
+.service-page__tab-icon {
+  margin-right: 4px;
+}
 .service-page__tab {
   width: calc(50% - 5px);
   height: 36px;

@@ -35,11 +35,12 @@ export default defineComponent({
   },
 
   created() {
-    const data = typeof window !== 'undefined' ? localStorage.getItem('cookie') || '{}' : null
-    const cookie = JSON.parse(data)
-    if (cookie?.isApproved) {
-      this.isCookieModalOpen = false
-    }
+    setTimeout(() => {
+      const cookie = JSON.parse(localStorage.getItem('cookie'))
+      if (cookie?.isApproved) {
+        this.isCookieModalOpen = false
+      }
+    }, 100)
   },
 
   data() {
@@ -96,7 +97,6 @@ export default defineComponent({
   list-style: none;
   text-decoration: none;
   font-family: 'Ubuntu', sans-serif;
-  scroll-behavior: smooth;
 }
 
 body {

@@ -25,29 +25,40 @@
 
         <div class="wireless-system__dropdown-list dropdown-list">
           <CardDropdown
-            active
+            :id="0"
+            :isActive="activeDropdown"
             index="01"
             title="Швидка та легка інтеграція на будь-якому етапі"
             text="Система бездротового розумного будинку дозволяє здійснювати просту інсталяцію незалежно від типу приміщення,
               без зайвих дротів та шнурів, не потребуючи втручання у готовий ремонт будівлі, залишаючи стіни цілими."
+            @toggleVisibility="setActiveDropdown"
           />
           <CardDropdown
+            :id="1"
+            :isActive="activeDropdown"
             index="02"
             title="Приваблива вартість"
             text="Порівняно з дротовими системами, бездротовий розумний будинок пропонує економічність завдяки меншій
               кількості необхідного обладнання та зменшеному обсягу робіт. Це дозволяє вам отримати передові технології без переплат."
+            @toggleVisibility="setActiveDropdown"
           />
           <CardDropdown
+            :id="2"
+            :isActive="activeDropdown"
             index="03"
             title="Легке інтегрування нових або додаткових елементів"
             text="Передові технології забезпечують швидке і просте інтегрування будь-яких нових пристроїв, дозволяючи
               розширювати функціонал вашого будинку та насолоджуватися останніми інноваціями у світі розумних пристроїв."
+            @toggleVisibility="setActiveDropdown"
           />
           <CardDropdown
+            :id="3"
+            :isActive="activeDropdown"
             index="04"
             title="Керування без Інтернету"
             text="Керування без інтернету у бездротовому розумному будинку можливе завдяки локальним мережам і технологіям,
               що дозволяють пристроям безперебійно взаємодіяти один з одним."
+            @toggleVisibility="setActiveDropdown"
           />
         </div>
       </div>
@@ -63,7 +74,20 @@ import CardDropdown from "~/UI/CardAccordion.vue";
 
 export default defineComponent({
   name: 'WirelessSystemSection',
-  components: {CardDropdown, SectionTitle}
+
+  components: {CardDropdown, SectionTitle},
+
+  data() {
+    return {
+      activeDropdown: 0
+    }
+  },
+
+  methods: {
+    setActiveDropdown(index) {
+      this.activeDropdown = index
+    }
+  }
 })
 </script>
 

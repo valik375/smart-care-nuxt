@@ -1,6 +1,7 @@
 <template>
   <Loader v-if="!isLoaded" />
   <Banner @openModal="toggleVisibility"/>
+  <Showroom />
   <CalculatorModal :isOpen="isModalOpen"/>
 </template>
 
@@ -9,10 +10,13 @@ import {defineComponent} from 'vue'
 import Banner from "~/components/calculatorSections/Banner.vue";
 import CalculatorModal from "~/components/calculatorSections/CalculatorModal.vue";
 import Loader from "~/UI/Loader.vue";
+import Showroom from "~/components/aboutUsSections/Showroom.vue";
 
 export default defineComponent({
   name: 'Calculator',
+
   components: {
+    Showroom,
     Loader,
     CalculatorModal,
     Banner

@@ -71,6 +71,7 @@ export default defineComponent({
   align-items: center;
   justify-content: space-between;
   margin-bottom: 16px;
+  gap: 16px;
 }
 .calculator-modal__template-choose-item {
   width: calc(50% - 4px);

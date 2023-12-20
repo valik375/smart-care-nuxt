@@ -152,7 +152,7 @@ export default defineComponent({
 
 .cookie__body {
   overflow: hidden;
-  max-height: 170px;
+  max-height: 200px;
   transition: all .3s ease;
 
   &.open {

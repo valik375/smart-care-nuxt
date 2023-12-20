@@ -147,7 +147,7 @@ export default defineComponent({
           ]
         },
         {
-          title: 'ФУНКЦІЇ БЕЗПЕКИ',
+          title: 'функції комфорту',
           links: [
             {
               text: 'Контроль освітлення',
@@ -335,6 +335,7 @@ export default defineComponent({
   line-height: 160%;
   color: $white;
   margin-bottom: 16px;
+  overflow-wrap: anywhere;
   transition: all .3s ease;
 
   img {

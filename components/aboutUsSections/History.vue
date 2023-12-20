@@ -77,6 +77,7 @@ export default defineComponent({
 
   @media only screen and (min-width: 1160px) {
     width: auto;
+    margin-top: 32px;
   }
 }
 

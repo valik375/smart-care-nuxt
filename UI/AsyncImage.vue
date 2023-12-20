@@ -1,5 +1,5 @@
 <template>
-  <img v-if="svg || img" :src="url" :alt="alt">
+  <img v-if="url && (svg || img)" :src="url" :alt="alt">
 </template>
 
 <script>

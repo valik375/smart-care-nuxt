@@ -17,16 +17,19 @@
           <p class="functions__text text">{{ section.text }}</p>
         </div>
         <div class="functions__image column-image">
-          <img loading="lazy" :src="image" alt="Card with wireless signal">
+          <img loading="lazy" :src="section.image" alt="Card with wireless signal">
         </div>
 
         <div class="functions__dropdown-list dropdown-list">
           <CardDropdown
             v-for="(item, index) in section.dropdownList"
             :key="index"
+            :id="index"
+            :isActive="activeDropdown"
             :index="index + 1"
             :title="item.title"
             :text="item.text"
+            @toggleVisibility="setActiveDropdown"
           />
         </div>
       </div>
@@ -55,6 +58,18 @@ export default defineComponent({
     section: {
       type: Object,
       default: () => {}
+    }
+  },
+
+  data() {
+    return {
+      activeDropdown: 0
+    }
+  },
+
+  methods: {
+    setActiveDropdown(index) {
+      this.activeDropdown = index
     }
   }
 })

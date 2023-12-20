@@ -1,5 +1,5 @@
 <template>
-  <div class="modal__backdrop" :class="{'open': isOpen}">
+  <div class="modal__backdrop" :class="{'open': isOpen}" @click="backdropHandler">
     <div class="modal">
       <div class="modal__close" @click.stop="closeModal">
         <img src="../assets/white-cross.svg" alt="Cross">
@@ -25,6 +25,12 @@ export default defineComponent({
   methods: {
     closeModal() {
       this.$emit('closeModal')
+    },
+
+    backdropHandler(event) {
+      if (event.target.className.includes('modal__backdrop')) {
+        this.closeModal()
+      }
     }
   }
 })

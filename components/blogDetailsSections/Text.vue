@@ -30,6 +30,7 @@ export default defineComponent({
 
   @media only screen and (min-width: 1160px) {
     margin-top: 24px;
+    font-size: 16px;
   }
 }
 </style>

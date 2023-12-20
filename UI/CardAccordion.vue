@@ -1,5 +1,5 @@
 <template>
-  <div class="card-dropdown" :class="{'active': isOpen}" @click="toggleVisibility">
+  <div class="card-dropdown" :class="{'active': isActive === id}" @click="toggleVisibility">
     <div class="dropdown-item__head">
       <div class="dropdown-item__value">{{ index }}</div>
       <div class="dropdown-item__title">{{ title }}</div>
@@ -23,6 +23,10 @@ export default defineComponent({
       type: String,
       default: ''
     },
+    id: {
+      type: Number,
+      default: 0
+    },
     title: {
       type: String,
       default: ''
@@ -31,25 +35,15 @@ export default defineComponent({
       type: String,
       default: ''
     },
-    active: {
-      type: Boolean,
-      default: false
-    }
-  },
-
-  mounted() {
-    this.isOpen = this.active
-  },
-
-  data() {
-    return {
-      isOpen: false
+    isActive: {
+      type: Number,
+      default: 0
     }
   },
 
   methods: {
     toggleVisibility() {
-      this.isOpen = !this.isOpen
+      this.$emit('toggleVisibility', this.id)
     }
   }
 })

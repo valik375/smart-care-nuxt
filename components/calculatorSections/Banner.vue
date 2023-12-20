@@ -47,14 +47,12 @@ export default defineComponent({
 @import 'vars';
 
 .calculator-banner__container {
-  padding-bottom: 56px;
 
   .bg-lines__image {
     top: 56px;
   }
 
   @media only screen and (min-width: 760px) {
-    padding-bottom: 100px;
 
     .bg-lines__image {
       top: 100px;
@@ -62,7 +60,6 @@ export default defineComponent({
   }
 
   @media only screen and (min-width: 1160px) {
-    padding-bottom: 180px;
 
     .bg-lines__image {
       top: 160px;

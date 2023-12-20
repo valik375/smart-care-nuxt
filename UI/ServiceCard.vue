@@ -26,7 +26,8 @@
       </div>
     </div>
     <NuxtLink :to="service.url" class="service-page__item-button button blue" type="button">
-      <img src="~/assets/white-arrow-right.svg" alt="Icon">
+      <img class="service-page__item-arrow first" src="~/assets/white-arrow-right.svg" alt="Icon">
+      <img class="service-page__item-arrow second" src="~/assets/white-arrow-right.svg" alt="Icon">
     </NuxtLink>
   </div>
 </template>
@@ -59,13 +60,27 @@ export default defineComponent({
 .service-page__item {
   position: relative;
   border: 1px solid transparent;
+  transition: all .3s ease;
   cursor: pointer;
 
   &:hover {
-    border-color: $dark-300;
+    border-color: $dark-500;
 
     .service-page__item-icon {
       background: $dark-500;
+    }
+
+    .service-page__item-arrow {
+
+      &.first {
+        left: 200%;
+      }
+
+      &.second {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
 
@@ -142,6 +157,12 @@ export default defineComponent({
 .service-page__item-text {
   font-size: 14px;
   margin-bottom: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
 }
 
 .service-page__item-price {
@@ -175,11 +196,28 @@ export default defineComponent({
   width: 40px;
   height: 40px;
   position: absolute;
+  overflow: hidden;
   bottom: 24px;
   right: 24px;
 
   img {
     margin-left: 0 !important;
+  }
+}
+
+.service-page__item-arrow {
+  transition: all .3s ease;
+
+  &.first {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &.second {
+    position: absolute;
+    left: -100%;
   }
 }
 </style>

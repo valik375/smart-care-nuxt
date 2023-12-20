@@ -397,6 +397,9 @@ export default defineComponent({
 
   @media only screen and (min-width: 1160px) {
     padding-top: 44px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    border-radius: 24px;
   }
 }
 .calculator__container {

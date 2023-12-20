@@ -32,15 +32,18 @@
       </div>
     </div>
   </section>
+  <BuildSystemSection />
 </template>
 
 <script>
 import {defineComponent} from 'vue'
+import BuildSystemSection from "~/components/indexSections/BuildSystemSection.vue";
 
 export default defineComponent({
   name: 'Blog',
 
   components: {
+    BuildSystemSection
 
   }
 })
@@ -123,6 +126,13 @@ export default defineComponent({
 }
 
 .post-list__item {
+  border: 1px solid transparent;
+  transition: all .3s ease;
+
+  &:hover {
+    border-color: $dark-500;
+    background: $dark-700;
+  }
 
   @media only screen and (min-width: 760px) {
     width: calc(50% - 8px);

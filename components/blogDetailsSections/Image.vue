@@ -44,7 +44,7 @@ export default defineComponent({
   margin-top: 24px;
 
   @media only screen and (min-width: 760px) {
-    padding: 32px;
+    padding: 32px 32px 24px 32px;
   }
 }
 

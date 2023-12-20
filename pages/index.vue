@@ -82,14 +82,17 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .home-portfolio {
-  padding-top: 50px;
 
-  @media only screen and (min-width: 760px) {
-    font-size: 100px;
-  }
+  :deep(.about-us-portfolio__container) {
+    padding-top: 50px;
 
-  @media only screen and (min-width: 1160px) {
-    font-size: 150px;
+    @media only screen and (min-width: 760px) {
+      padding-top: 80px;
+    }
+
+    @media only screen and (min-width: 1160px) {
+      padding-top: 120px;
+    }
   }
 }
 </style>

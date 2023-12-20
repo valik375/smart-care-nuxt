@@ -34,7 +34,8 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="blog-details__same-container container">
+      <div class="blog-details__same-title">Схожі статті</div>
       <div class="blog-details__same post-list">
         <PostCard />
         <PostCard />
@@ -196,10 +197,10 @@ export default defineComponent({
 @import 'vars';
 
 .blog-details {
-  padding: 120px 0;
+  padding-top: 120px;
 
   @media only screen and (min-width: 1160px) {
-    padding: 160px 0;
+    padding-top: 160px;
   }
 }
 
@@ -209,6 +210,7 @@ export default defineComponent({
     display: flex;
     align-items: flex-start;
     gap: 120px;
+    padding-bottom: 150px;
   }
 }
 
@@ -219,7 +221,12 @@ export default defineComponent({
     max-width: 700px;
   }
 }
-
+.blog-details__content {
+  height: 100%;
+  position: sticky;
+  top: 120px;
+  left: 0;
+}
 .banner__title {
   font-size: 26px;
   font-weight: 700;
@@ -314,15 +321,28 @@ export default defineComponent({
 .banner__text {
   font-size: 15px;
 }
-
-.image-template {
-  margin-top: 24px;
+.blog-details__same-container {
+  padding-bottom: 40px;
 
   @media only screen and (min-width: 760px) {
-    padding: 32px;
+    padding-bottom: 100px;
+  }
+
+  @media only screen and (min-width: 1160px) {
+    padding-bottom: 160px;
   }
 }
+.blog-details__same-title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0.22px;
+  color: $white;
 
+  @media only screen and (min-width: 760px) {
+    font-size: 28px;
+  }
+}
 .blog-details__same {
   display: flex;
   flex-direction: column;

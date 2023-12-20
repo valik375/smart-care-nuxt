@@ -24,10 +24,11 @@
     </NuxtLink>
 
     <NuxtLink
-      v-for="item in list"
+      v-for="(item, index) in list"
       :key="item.path"
       :to="item.path"
       class="bread-crumbs__item"
+      :class="{'active': list.length === index + 1}"
     >
       {{ item.name }}
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -76,10 +77,25 @@ export default defineComponent({
   font-size: 12px;
   font-weight: 700;
   line-height: 140%;
-  color: $white;
+  color: #616676;
+  transition: all .3s ease;
+
+  &.active {
+    color: $white;
+
+    &:hover {
+      color: $white;
+      text-decoration: none;
+    }
+  }
 
   &:last-child svg {
     display: none;
+  }
+
+  &:hover {
+    color: $blue;
+    text-decoration: underline;
   }
 
   @media only screen and (min-width: 1160px) {

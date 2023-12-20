@@ -75,6 +75,7 @@ export default defineComponent({
   text-align: center;
   font-weight: 700;
   font-size: 20px;
+  height: 66px !important;
 }
 .calculator-modal__label {
   position: absolute;

@@ -7,8 +7,12 @@
 
         <Swiper
           class="about-us-team__swiper"
+          :modules="[]"
           :options="teamSwiperOptions"
           :breakpoints="teamSwiperOptions.breakpoints"
+          :grid="teamSwiperOptions.grid"
+          :slides-per-view="teamSwiperOptions.slidesPerView"
+          :space-between="16"
         >
           <SwiperSlide class="about-us-team__swiper-slide card">
             <div class="about-us-team__swiper-image">
@@ -89,10 +93,6 @@ export default defineComponent({
       return {
         slidesPerView: 1.2,
         spaceBetween: 12,
-        navigation: {
-          prevEl: '.about-us-portfolio__swiper-prev',
-          nextEl: '.about-us-portfolio__swiper-next',
-        },
         grid: {
           fill: 'row',
           rows: 1,
@@ -193,11 +193,9 @@ export default defineComponent({
 
 .about-us-team__swiper-text {
   font-size: 14px;
-  height: 46px;
 
   @media only screen and (min-width: 1160px) {
     font-size: 13px;
-    height: auto;
   }
 }
 </style>
