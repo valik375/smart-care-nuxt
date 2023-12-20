@@ -1,6 +1,7 @@
 <template>
   <section class="about-us-history">
-    <div class="about-us-history__container container">
+    <div class="bordered-bottom-section">
+      <div class="about-us-history__container container">
       <div class="about-us-history__info">
         <SectionTitle
           subtitle="Наша історія"
@@ -17,6 +18,7 @@
       <div class="about-us-history__image">
         <img src="~/assets/white-logo.svg" alt="Logo">
       </div>
+    </div>
     </div>
   </section>
 </template>
@@ -39,16 +41,18 @@ export default defineComponent({
 <style scoped lang="scss">
 @import 'vars';
 
-
 .about-us-history {
-  padding-top: 50px;
+  background: $dark-950;
+}
+.about-us-history__container {
+  padding: 50px 0;
 
   @media only screen and (min-width: 760px) {
-    padding-top: 100px;
+    padding: 100px 0;
   }
 
   @media only screen and (min-width: 1160px) {
-    padding-top: 150px;
+    padding: 150px 0;
   }
 }
 

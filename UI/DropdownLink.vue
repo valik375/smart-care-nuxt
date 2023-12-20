@@ -39,6 +39,9 @@ export default defineComponent({
   height: 48px;
   display: flex;
   align-items: center;
+  padding: 0 8px 0 12px;
+  border-radius: 8px;
+  transition: all .3s ease;
 
   .dropdown-link-icon {
     width: 32px;
@@ -61,6 +64,17 @@ export default defineComponent({
     font-weight: 700;
     line-height: 150%;
     color: $white;
+  }
+
+  &:hover {
+    background: $dark-700;
+  }
+
+  @media only screen and (min-width: 760px) {
+
+    span {
+      font-size: 14px;
+    }
   }
 }
 </style>

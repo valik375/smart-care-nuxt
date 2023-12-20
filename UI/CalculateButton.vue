@@ -1,6 +1,6 @@
 <template>
   <NuxtLink class="calculate-button" to="/calculator">
-     <span class="calculate-button-left">
+    <span class="calculate-button-left">
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M36.8223 17.2749C35.2724 7.92952 26.8073 1.518 17.9149 2.95433C9.02245 4.39065 3.07014 13.1309 4.62 22.4762C6.16986 31.8216 14.635 38.2331 23.5274 36.7968C32.4198 35.3604 38.3721 26.6202 36.8223 17.2749Z" fill="#151619"/>
         <path d="M32.5629 18.0071C31.2672 10.1939 24.1896 4.8336 16.7549 6.03449C9.32006 7.23537 4.3434 14.5427 5.63916 22.3559C6.93493 30.1691 14.0124 35.5294 21.4472 34.3285C28.882 33.1276 33.8587 25.8203 32.5629 18.0071Z" fill="#151619"/>
@@ -49,6 +49,11 @@ export default defineComponent({
   padding: 0 8px;
   border-radius: 12px;
   background: $dark-600;
+  transition: all .3s ease;
+
+  &:hover {
+    background: $dark-550;
+  }
 }
 
 .calculate-button-left {
@@ -64,6 +69,17 @@ export default defineComponent({
     text-transform: uppercase;
     margin-left: 8px;
   }
+
+  @media only screen and (min-width: 760px) {
+
+    span {
+      font-size: 12px;
+
+      br {
+        display: none;
+      }
+    }
+  }
 }
 
 .calculate-button-right {
@@ -78,6 +94,13 @@ export default defineComponent({
     text-transform: uppercase;
     color: $blue;
     margin-right: 4px;
+  }
+
+  @media only screen and (min-width: 760px) {
+
+    span {
+      font-size: 12px;
+    }
   }
 }
 </style>

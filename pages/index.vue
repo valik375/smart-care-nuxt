@@ -14,7 +14,7 @@
   <StatisticsSection/>
   <HaveQuestionsSection />
   <BlogSection />
-  <BuildSystemSection />
+  <BuildSystemSection isSeoText />
 </template>
 
 <script>

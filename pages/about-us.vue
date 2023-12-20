@@ -4,7 +4,7 @@
   <Portfolio />
   <Team />
   <History />
-  <ProductsSection />
+  <ProductsSection class="products" />
   <AdvantagesSection />
   <Showroom />
 </template>
@@ -47,3 +47,9 @@ export default defineComponent({
   }
 })
 </script>
+
+<style lang="scss" scoped>
+.products {
+  background: #151619;
+}
+</style>
