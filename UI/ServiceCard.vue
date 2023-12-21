@@ -1,5 +1,5 @@
 <template>
-  <div class="service-page__item card">
+  <NuxtLink :to="service.url"  class="service-page__item card">
     <div class="service-page__item-wrapper">
       <AsyncImage class="service-page__item-bg" :img="service.image" alt="BG image" />
       <div class="service-page__item-icon">
@@ -25,11 +25,11 @@
         Ціна під ключ Від {{ service.price }}$
       </div>
     </div>
-    <NuxtLink :to="service.url" class="service-page__item-button button blue" type="button">
+    <div class="service-page__item-button button blue" type="button">
       <img class="service-page__item-arrow first" src="~/assets/white-arrow-right.svg" alt="Icon">
       <img class="service-page__item-arrow second" src="~/assets/white-arrow-right.svg" alt="Icon">
-    </NuxtLink>
-  </div>
+    </div>
+  </NuxtLink>
 </template>
 
 <script>

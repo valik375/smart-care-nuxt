@@ -93,4 +93,10 @@ export default defineComponent({
 .functions__info {
   margin-bottom: 32px;
 }
+
+.functions__left {
+  img {
+    max-width: 390px;
+  }
+}
 </style>

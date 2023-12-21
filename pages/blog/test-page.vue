@@ -34,12 +34,16 @@
       </div>
     </div>
 
-    <div class="blog-details__same-container container">
-      <div class="blog-details__same-title">Схожі статті</div>
-      <div class="blog-details__same post-list">
-        <PostCard />
-        <PostCard />
-        <PostCard />
+    <div class="blog-details__same">
+      <div class="bordered-bottom-section">
+        <div class="blog-details__same-container container">
+          <div class="blog-details__same-title">Схожі статті</div>
+          <div class="blog-details__same__list post-list">
+            <PostCard />
+            <PostCard />
+            <PostCard />
+          </div>
+        </div>
       </div>
     </div>
     <BuildSystemSection
@@ -321,6 +325,9 @@ export default defineComponent({
 .banner__text {
   font-size: 15px;
 }
+.blog-details__same {
+  background: $dark-950;
+}
 .blog-details__same-container {
   padding-bottom: 40px;
 
@@ -343,7 +350,7 @@ export default defineComponent({
     font-size: 28px;
   }
 }
-.blog-details__same {
+.blog-details__same__list {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
