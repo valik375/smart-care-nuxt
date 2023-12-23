@@ -36,7 +36,7 @@
           </div>
           <div class="footer__nav-wrapper">
             <div
-              v-for="service in serviceLinks"
+              v-for="service in links"
               :key="service.title"
               class="footer__nav"
             >
@@ -116,68 +116,14 @@ import Button from "~/UI/Button.vue";
 export default defineComponent({
   name: 'Footer',
 
-  inject: ['toggleConsultationModal'],
-
-  data() {
-    return {
-      serviceLinks: [
-        {
-          title: 'ФУНКЦІЇ БЕЗПЕКИ',
-          links: [
-            {
-              text: 'Інтеграція зі службою охорони',
-              url: '/'
-            },
-            {
-              text: 'Протипожежна система',
-              url: '/'
-            },
-            {
-              text: 'Антипотоп система',
-              url: '/'
-            },
-            {
-              text: 'Розумні замки',
-              url: '/'
-            },
-            {
-              text: 'Відеоспостереження',
-              url: '/'
-            }
-          ]
-        },
-        {
-          title: 'функції комфорту',
-          links: [
-            {
-              text: 'Контроль освітлення',
-              url: '/'
-            },
-            {
-              text: 'Керування опаленням',
-              url: '/'
-            },
-            {
-              text: 'Тепла підлога',
-              url: '/'
-            },
-            {
-              text: 'Контроль ел. приладів та мультирум',
-              url: '/'
-            },
-            {
-              text: 'Автоматизація вентиляції',
-              url: '/'
-            },
-            {
-              text: 'Автоматичні штори',
-              url: '/'
-            }
-          ]
-        }
-      ]
+  props: {
+    links: {
+      type: Array,
+      default: () => []
     }
-  }
+  },
+
+  inject: ['toggleConsultationModal']
 })
 </script>
 

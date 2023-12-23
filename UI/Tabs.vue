@@ -23,7 +23,15 @@ export default defineComponent({
     list: {
       type: Array,
       default: () => []
+    },
+    activeTab: {
+      type: Number,
+      default: 0
     }
+  },
+
+  mounted() {
+    this.activeTabIndex = this.activeTab
   },
 
   data() {

@@ -4,7 +4,7 @@
     <div class="service-page__container container bg-lines">
       <BreadCrumbs class="service-page__breadcrumbs" :list="[{ name: sectionTitle, path: '/service' }]" />
 
-      <Tabs class="service-page__tabs" :list="tabs">
+      <Tabs class="service-page__tabs" :activeTab="activeTab" :list="tabs">
         <template v-slot:tabItem="{ tab }">
           <div class="service-page__tab-icon" v-html="tab.icon"></div>
           <span>{{ tab.text }}</span>
@@ -56,7 +56,6 @@ export default defineComponent({
   },
 
   mounted() {
-    this.activeList = this.serviceList['security']
     this.updateTemplate(this.$route.query.type)
     setTimeout(() => {
       this.isLoaded = true
@@ -68,6 +67,7 @@ export default defineComponent({
       isLoaded: false,
       sectionTitle: '',
       sectionText: '',
+      activeTab: '',
       tabs: [
         {
           handler: () => this.changeTab('security'),
@@ -185,6 +185,8 @@ export default defineComponent({
     },
 
     updateTemplate(section) {
+      this.activeList = this.serviceList[section || 'security']
+      this.activeTab = section === 'security' ? 0 : 1
       this.sectionTitle = section === 'security' ? 'Функції безпеки' : 'Функції комфорту'
       this.sectionText = section === 'security'
         ? 'Ми пропонуємо найширший спектр функцій безпеки та захисту на українському ринку. Дізнайтеся детальніше про кожну функцію нижче.'

@@ -36,7 +36,7 @@ export default defineComponent({
 
   &.active {
     .accordion__body {
-      max-height: 900px;
+      max-height: 1500px;
     }
     .accordion__chevron {
       transform: rotate(-90deg);

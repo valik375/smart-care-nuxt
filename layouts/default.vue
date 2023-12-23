@@ -1,13 +1,13 @@
 <template>
 <div class="layout">
-  <Header />
+  <Header :links="serviceLinks" />
   <slot />
   <ShowRoomModal :isOpen="isShowRoomModalOpen" />
   <ConsultationModal :isOpen="isConsultationModalOpen" />
   <ConfirmModal :isOpen="isConfirmModalOpen" />
   <ScenarioModal :isOpen="isScenarioModalOpen" />
   <CookieModal :isOpen="isCookieModalOpen" />
-  <Footer />
+  <Footer :links="serviceLinks" />
 </div>
 </template>
 
@@ -50,6 +50,87 @@ export default defineComponent({
       isConfirmModalOpen: false,
       isScenarioModalOpen: false,
       isCookieModalOpen: true,
+      serviceLinks: [
+        {
+          title: 'ФУНКЦІЇ БЕЗПЕКИ',
+          titleShort: 'БЕЗПЕКА',
+          type: 'security',
+          links: [
+            {
+              icon: 'white-shield',
+              text: 'Інтеграція зі службою охорони',
+              url: '/service/integration-security'
+            },
+            {
+              icon: 'white-fire',
+              text: 'Протипожежна система',
+              url: '/service/'
+            },
+            {
+              icon: 'white-drop',
+              text: 'Антипотоп система',
+              url: '/service/'
+            },
+            {
+              icon: 'white-lock',
+              text: 'Розумні замки',
+              url: '/service/smart-lock'
+            },
+            {
+              icon: 'white-camera',
+              text: 'Відеоспостереження',
+              url: '/service/video-surveillance'
+            }
+          ]
+        },
+        {
+          title: 'функції комфорту',
+          titleShort: 'КОМФОРТ',
+          type: 'comfort',
+          links: [
+            {
+              icon: 'white-light',
+              text: 'Контроль освітлення',
+              url: '/service/'
+            },
+            {
+              icon: 'white-heating',
+              text: 'Керування опаленням',
+              url: '/service/'
+            },
+            {
+              icon: 'white-floor',
+              text: 'Тепла підлога',
+              url: '/service/'
+            },
+            {
+              icon: 'white-socket',
+              text: 'Контроль ел. приладів та мультирум',
+              url: '/service/'
+            },
+            {
+              icon: 'white-ventilation',
+              text: 'Автоматизація вентиляції',
+              url: '/service/'
+            },
+            {
+              icon: 'white-blinds',
+              text: 'Автоматичні штори',
+              url: '/service/automatic-curtains'
+            },
+            {
+              icon: 'white-voice',
+              text: 'Розумний домофон',
+              url: '/service/'
+            },
+            {
+              icon: 'white-micro',
+              text: 'Керування голосом',
+              url: '/service/'
+            }
+          ]
+        }
+      ]
     }
   },
 

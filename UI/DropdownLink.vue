@@ -13,6 +13,7 @@ import AsyncImage from "~/UI/AsyncImage.vue";
 
 export default defineComponent({
   name: 'DropdownLink',
+
   components: {AsyncImage},
 
   props: {

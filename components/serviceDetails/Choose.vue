@@ -13,7 +13,10 @@
         </button>
       </div>
       <div class="choose__right">
-        <AsyncImage :img="section?.image" alt="Choose Image" />
+        <img class="choose__house-image" src="~/assets/choose-house.png" alt="Choose Image" />
+        <div class="choose__icon">
+          <AsyncImage :svg="section?.icon" alt="Choose Image" />
+        </div>
       </div>
     </div>
   </section>
@@ -89,19 +92,50 @@ export default defineComponent({
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   background: url('~/assets/two-column-section-bg.png');
   background-size: cover;
   overflow: hidden;
   border-radius: 20px;
+  padding: 20px;
 
-  img {
+  .choose__house-image {
     width: 100%;
     height: 100%;
     object-fit: contain;
   }
 
+  .choose__icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: $dark-600;
+    transform: translate(-50%, -50%);
+    border-radius: 100px;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
   @media only screen and (min-width: 760px) {
     height: 320px;
+
+    .choose__icon {
+      width: 72px;
+      height: 72px;
+
+      img {
+        width: 32px;
+        height: 32px;
+      }
+    }
   }
 
   @media only screen and (min-width: 1160px) {

@@ -101,91 +101,23 @@
             </div>
           </template>
           <template v-slot:body>
-            <div class="header__accordion-section">
-              <div class="header__accordion-title">Безпека</div>
+            <div
+              v-for="(section, index) in links"
+              :key="index"
+              class="header__accordion-section"
+            >
+              <div class="header__accordion-title">{{ section.titleShort }}</div>
               <DropdownLink
-                url=""
-                text="Інтеграція зі службою охорони"
-                icon="white-shield"
-                @click="toggleMenu"
-              />
-              <DropdownLink
-                url=""
-                text="Протипожежна система"
-                icon="white-fire"
-                @click="toggleMenu"
-              />
-              <DropdownLink
-                url=""
-                text="Антипотоп система"
-                icon="white-drop"
-                @click="toggleMenu"
-              />
-              <DropdownLink
-                url=""
-                text="Розумні замки"
-                icon="white-lock"
-                @click="toggleMenu"
-              />
-              <DropdownLink
-                url=""
-                text="Відеоспостереження"
-                icon="white-camera"
-                @click="toggleMenu"
-              />
-              <DropdownLink
-                url=""
-                text="Розумні замки"
-                icon="white-lock"
+                v-for="(link, index) in section.links"
+                :key="index"
+                :url="link.url"
+                :text="link.text"
+                :icon="link.icon"
                 @click="toggleMenu"
               />
               <ArrowLink
-                url="/service?type=security"
+                :url="`/service?type=${section.type}`"
                 text="Усі функції безпеки"
-                @click="toggleMenu"
-              />
-            </div>
-            <div class="header__accordion-section">
-              <div class="header__accordion-title">Комфорт</div>
-              <DropdownLink
-                url=""
-                text="Контроль освітлення"
-                icon="white-light"
-                @click="toggleMenu"
-              />
-              <DropdownLink
-                url=""
-                text="Керування опаленням"
-                icon="white-heating"
-                @click="toggleMenu"
-              />
-              <DropdownLink
-                url=""
-                text="Тепла підлога"
-                icon="white-floor"
-                @click="toggleMenu"
-              />
-              <DropdownLink
-                url=""
-                text="Контроль ел. приладів та мультирум"
-                icon="white-socket"
-                @click="toggleMenu"
-              />
-              <DropdownLink
-                url=""
-                text="Автоматизація вентиляції"
-                icon="white-ventilation"
-                @click="toggleMenu"
-              />
-              <DropdownLink
-                url=""
-                text="Автоматичні штори"
-                icon="white-blinds"
-                @click="toggleMenu"
-              />
-              <ArrowLink
-                url="/service?type=comfort"
-                text="Усі функції комфорту"
                 @click="toggleMenu"
               />
             </div>
@@ -236,44 +168,26 @@
             </Button>
           </template>
           <template v-slot:body="props">
-            <div class="services__wrapper">
-              <div class="services__title">Безпека</div>
+            <div
+              v-for="(section, index) in links"
+              :key="index"
+              class="services__wrapper"
+            >
+              <div class="services__title">{{ section.titleShort }}</div>
               <div class="services__list">
                 <DropdownLink
+                  v-for="(link, index) in section.links"
+                  :key="index"
                   class="services__link"
-                  url="/"
-                  text="Інтеграція зі службою охорони"
-                  icon="white-shield"
-                  @click="props.toggleVisibility"
-                />
-                <DropdownLink
-                  class="services__link"
-                  url="/"
-                  text="Інтеграція зі службою охорони"
-                  icon="white-shield"
+                  :url="link.url"
+                  :text="link.text"
+                  :icon="link.icon"
                   @click="props.toggleVisibility"
                 />
               </div>
               <ArrowLink
-                url="/service?type=security"
+                :url="`/service?type=${section.type}`"
                 text="Усі функції безпеки"
-                @click="props.toggleVisibility"
-              />
-            </div>
-            <div class="services__wrapper">
-              <div class="services__title">Комфорт</div>
-              <div class="services__list">
-                <DropdownLink
-                  class="services__link"
-                  url="/"
-                  text="Контроль освітлення"
-                  icon="white-light"
-                  @click="props.toggleVisibility"
-                />
-              </div>
-              <ArrowLink
-                url="/service?type=comfort"
-                text="Усі функції комфорту"
                 @click="props.toggleVisibility"
               />
             </div>
@@ -375,6 +289,7 @@ import Button from "~/UI/Button.vue";
 
 export default defineComponent({
   name: 'Header',
+
   components: {
     Button,
     DesktopLink,
@@ -384,6 +299,13 @@ export default defineComponent({
     SimpleDropdown,
     Accordion,
     DropdownLink,
+  },
+
+  props: {
+    links: {
+      type: Array,
+      default: () => []
+    }
   },
 
   inject: ['toggleShowRoomModal', 'toggleConsultationModal'],
@@ -415,6 +337,8 @@ export default defineComponent({
   .simple-dropdown-body {
     width: 700px;
     padding: 0;
+    max-height: calc(100vh - 100px);
+    overflow: auto;
   }
   .services__wrapper {
     padding: 28px 24px 32px 24px;
