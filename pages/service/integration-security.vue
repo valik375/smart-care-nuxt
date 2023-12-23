@@ -73,7 +73,7 @@ export default defineComponent({
           },
         ],
         functions: {
-          image: 'wireless-system-image',
+          image: 'fire-detector-illustration',
           title: 'Можливості протипожежної системи',
           text: 'Розумна протипожежна система подбає про вашу безпеку, сповістить про загрозу і автоматично усуне її.',
           dropdownList: [

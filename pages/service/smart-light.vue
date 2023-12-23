@@ -12,7 +12,7 @@
   <BuildSystemSection
     subtitle=""
     price="200"
-    title="Розумне освітлення"
+    title="Розумне освітлення <span>під ключ</span>"
     text="Це інноваційний метод управління освітленням у вашому будинку."
   />
 </template>
