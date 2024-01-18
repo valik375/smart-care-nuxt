@@ -67,7 +67,7 @@ export default defineComponent({
       isLoaded: false,
       sectionTitle: '',
       sectionText: '',
-      activeTab: '',
+      activeTab: 0,
       tabs: [
         {
           handler: () => this.changeTab('security'),

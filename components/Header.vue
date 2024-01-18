@@ -187,7 +187,7 @@
               </div>
               <ArrowLink
                 :url="`/service?type=${section.type}`"
-                text="Усі функції безпеки"
+                :text="`Усі ${section.title}`"
                 @click="props.toggleVisibility"
               />
             </div>

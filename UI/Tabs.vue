@@ -45,6 +45,12 @@ export default defineComponent({
       this.activeTabIndex = index
       callback(index)
     }
+  },
+
+  watch: {
+    activeTab(value) {
+      this.activeTabIndex = value
+    }
   }
 })
 </script>

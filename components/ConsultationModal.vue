@@ -84,7 +84,7 @@ export default defineComponent({
     }
   },
 
-  inject: ['toggleConsultationModal'],
+  inject: ['toggleConsultationModal', 'toggleConfirmModal'],
 
   data() {
     return {
@@ -96,17 +96,25 @@ export default defineComponent({
 
   methods: {
     async onSubmit(event) {
-      await fetch('https://formspree.io/f/mwkdovry', {
-        method: 'POST',
-        body: new FormData(event.target),
-        headers: {
-          'Accept': 'application/json'
-        }
-      })
-      this.name = ''
-      this.phone = '+380'
-      this.email = ''
-      this.toggleConsultationModal()
+      try {
+        await fetch('https://formspree.io/f/mwkdovry', {
+          method: 'POST',
+          body: new FormData(event.target),
+          headers: {
+            'Accept': 'application/json'
+          }
+        })
+        this.toggleConsultationModal()
+        this.toggleConfirmModal()
+      } catch (error) {
+        this.toggleConsultationModal()
+        throw error
+      } finally {
+        this.name = ''
+        this.phone = '+380'
+        this.email = ''
+      }
+
     },
   }
 })

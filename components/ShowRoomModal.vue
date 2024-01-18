@@ -79,7 +79,7 @@ export default defineComponent({
     }
   },
 
-  inject: ['toggleShowRoomModal'],
+  inject: ['toggleShowRoomModal', 'toggleConfirmModal'],
 
   data() {
     return {
@@ -91,17 +91,24 @@ export default defineComponent({
 
   methods: {
     async onSubmit(event) {
-      await fetch('https://formspree.io/f/mwkdovry', {
-        method: 'POST',
-        body: new FormData(event.target),
-        headers: {
-          'Accept': 'application/json'
-        }
-      })
-      this.name = ''
-      this.date = ''
-      this.phone = '+380'
-      this.toggleShowRoomModal()
+      try {
+        await fetch('https://formspree.io/f/mwkdovry', {
+          method: 'POST',
+          body: new FormData(event.target),
+          headers: {
+            'Accept': 'application/json'
+          }
+        })
+        this.toggleShowRoomModal()
+        this.toggleConfirmModal()
+      } catch (error) {
+        this.toggleShowRoomModal()
+        throw error
+      } finally {
+        this.name = ''
+        this.date = ''
+        this.phone = '+380'
+      }
     },
   }
 })

@@ -55,6 +55,7 @@ export default defineComponent({
 :deep(.modal) {
   margin: auto;
   padding: 32px;
+  max-width: 380px;
 }
 .confirm-modal__accept {
   width: 40px;
