@@ -34,7 +34,7 @@ import WirelessSystem from "~/components/serviceDetails/WirelessSystem.vue";
 import HaveQuestions from "~/components/serviceDetails/HaveQuestions.vue";
 
 export default defineComponent({
-  name: 'Smart Lock',
+  name: 'SmartLock',
 
   components: {
     HaveQuestions,
@@ -106,28 +106,27 @@ export default defineComponent({
             },
           ]
         },
-        equipment: [
-          {
-            image: 'wireless-system-image',
-            title: 'Детектор пожежі',
-            text: 'Бездротовий пожежний датчик тепла, диму та чадного газу.',
-          },
-          {
-            image: 'wireless-system-image',
-            title: 'Тривожна кнопка',
-            text: 'Бездротова настінна кнопка для активації пожежної тривоги вручну.',
-          },
-          {
-            image: 'wireless-system-image',
-            title: 'Хаб',
-            text: 'Централь з підтримкою бездротових пристроїв.',
-          },
-          {
-            image: 'wireless-system-image',
-            title: 'Система автогасіння',
-            text: 'Автономний, автоматичний модуль порошкового полумʼягасіння.',
-          }
-        ],
+        equipment: {
+          title: 'З чого складається система антипотопу',
+          text: 'Пристрої, що входять до системи антипотопу. Їх перелік можна змінювати згідно потреб та бюджету.',
+          items: [
+            {
+              image: 'smart-lock',
+              title: 'Розумні замки',
+              text: 'Керуються віддалено, зручні у використанні, антивандальні.',
+            },
+            {
+              image: 'smart-intercom',
+              title: 'Розумний відеодзвінок',
+              text: 'Дає змогу віддалено спілкуватися з гостями і транслювати відео.',
+            },
+            {
+              image: 'control-center',
+              title: 'Центр керування',
+              text: 'Хаб, що повʼязує усю екосистему і через який керується увесь будинок.',
+            }
+          ]
+        },
         choose: {
           icon: 'white-lock',
           title: 'Як правильно вибрати «розумний» замок',
@@ -136,57 +135,49 @@ export default defineComponent({
         },
         automations: [
           {
-            title: 'Трігер: Датчик ідентифікує ненавмисний спалах вогню',
+            title: 'Трігер: Ви маєте гостя, котрому треба зайти всередину, але нікого немає вдома',
             options: [
               {
-                icon: 'blue-bag',
-                name: 'Активація датчику пожежогасіння в зоні виявлення'
+                icon: 'blue-iphone',
+                name: 'Заходите у додаток'
               },
               {
-                icon: 'blue-bag',
-                name: 'Сирена'
-              },
-              {
-                icon: 'blue-bag',
-                name: 'Виклик пожежної безпеки'
-              },
-              {
-                icon: 'blue-bag',
-                name: 'Вимкнення усіх електроприладів'
+                icon: 'blue-lock',
+                name: 'Відкриваєте двері віддалено'
               }
             ]
           },
           {
-            title: 'Трігер: Велика концентрація диму та вуглекислого газу у кімнаті',
+            title: 'Трігер: Спроба взлому замку',
             options: [
               {
-                icon: 'blue-bag',
+                icon: 'blue-alarm',
                 name: 'Сирена'
               },
               {
-                icon: 'blue-bag',
-                name: 'Виклик пожежної безпеки'
+                icon: 'blue-light',
+                name: 'Освітлення території'
               },
               {
-                icon: 'blue-bag',
+                icon: 'blue-iphone',
                 name: 'Повідомлення на ваш телефон'
               }
             ]
           },
           {
-            title: 'Трігер: Коротке замикання у електромережі',
+            title: 'Трігер: Треба єдиноразово впустити курʼєра на подвірʼя',
             options: [
               {
-                icon: 'blue-bag',
-                name: 'Ізоляція ділянки замикання'
+                icon: 'blue-iphone',
+                name: 'Заходите у додаток'
               },
               {
-                icon: 'blue-bag',
-                name: 'Знеструмлення приладів'
+                icon: 'blue-voice',
+                name: 'Генеруєте тимчасовий код доступу за яким курʼєр зможе зайти'
               },
               {
-                icon: 'blue-bag',
-                name: 'Повідомлення на ваш телефон'
+                icon: 'blue-lock',
+                name: 'Повідомлення на телефон про вхід нерезидента'
               }
             ]
           }

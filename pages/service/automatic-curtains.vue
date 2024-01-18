@@ -34,7 +34,7 @@ import WirelessSystem from "~/components/serviceDetails/WirelessSystem.vue";
 import HaveQuestions from "~/components/serviceDetails/HaveQuestions.vue";
 
 export default defineComponent({
-  name: 'Automatic Curtains',
+  name: 'AutomaticCurtains',
 
   components: {
     HaveQuestions,
@@ -110,28 +110,27 @@ export default defineComponent({
             },
           ]
         },
-        equipment: [
-          {
-            image: 'wireless-system-image',
-            title: 'Детектор пожежі',
-            text: 'Бездротовий пожежний датчик тепла, диму та чадного газу.',
-          },
-          {
-            image: 'wireless-system-image',
-            title: 'Тривожна кнопка',
-            text: 'Бездротова настінна кнопка для активації пожежної тривоги вручну.',
-          },
-          {
-            image: 'wireless-system-image',
-            title: 'Хаб',
-            text: 'Централь з підтримкою бездротових пристроїв.',
-          },
-          {
-            image: 'wireless-system-image',
-            title: 'Система автогасіння',
-            text: 'Автономний, автоматичний модуль порошкового полумʼягасіння.',
-          }
-        ],
+        equipment: {
+          title: 'З чого складається автоматизація штор чи ролетів',
+          text: 'Пристрої, що входять до автоматизації штор чи ролетів. Їх перелік можна змінювати згідно потреб та бюджету.',
+          items: [
+            {
+              image: 'smart-curtain-rod',
+              title: 'Розумний карниз',
+              text: 'Має рухомі елементи, що керуються мотором. Має віддалене керування.',
+            },
+            {
+              image: 'motor-for-curtains',
+              title: 'Мотор для штор',
+              text: 'Рухає штори автоматично у розумному карнизі.',
+            },
+            {
+              image: 'server',
+              title: 'Сервер',
+              text: 'Синхронізує роботу усих пристроїв розумного будинку.',
+            }
+          ]
+        },
         choose: {
           icon: 'white-blinds',
           title: 'Як вибрати «розумні» штори',
@@ -140,57 +139,53 @@ export default defineComponent({
         },
         automations: [
           {
-            title: 'Трігер: Датчик ідентифікує ненавмисний спалах вогню',
+            title: 'Трігер: Ви хочете підвищити якість свого сну',
             options: [
               {
-                icon: 'blue-bag',
-                name: 'Активація датчику пожежогасіння в зоні виявлення'
+                icon: 'blue-iphone',
+                name: 'Налаштовуєте розклад роботи штор у додатку'
               },
               {
-                icon: 'blue-bag',
-                name: 'Сирена'
+                icon: 'blue-blinds',
+                name: 'Штори автоматично закриваються на ніч перед сном'
               },
               {
-                icon: 'blue-bag',
-                name: 'Виклик пожежної безпеки'
+                icon: 'blue-multiroom',
+                name: 'Програються звуки океану'
               },
               {
-                icon: 'blue-bag',
-                name: 'Вимкнення усіх електроприладів'
+                icon: 'blue-blinds',
+                name: 'Штори автоматично відкриваються за 30 хвилин до вашого будильнику'
               }
             ]
           },
           {
-            title: 'Трігер: Велика концентрація диму та вуглекислого газу у кімнаті',
+            title: 'Трігер: Адаптивні штори та ролети',
             options: [
               {
-                icon: 'blue-bag',
-                name: 'Сирена'
+                icon: 'blue-user',
+                name: 'Ви пересуваєтеся своєю оселею'
               },
               {
-                icon: 'blue-bag',
-                name: 'Виклик пожежної безпеки'
-              },
-              {
-                icon: 'blue-bag',
-                name: 'Повідомлення на ваш телефон'
+                icon: 'blue-blinds',
+                name: 'Штори та ролети автоматично відкриваються у тих кімнатах, де ви знаходитеся'
               }
             ]
           },
           {
-            title: 'Трігер: Коротке замикання у електромережі',
+            title: 'Трігер: Зміна погоди за вікном',
             options: [
               {
-                icon: 'blue-bag',
-                name: 'Ізоляція ділянки замикання'
+                icon: 'blue-iphone',
+                name: 'Ви налаштовуєте інтеграцією з погодою у додатку'
               },
               {
-                icon: 'blue-bag',
-                name: 'Знеструмлення приладів'
+                icon: 'blue-blinds',
+                name: 'Положення штор та ролетів підлаштовується під поточну погоду'
               },
               {
-                icon: 'blue-bag',
-                name: 'Повідомлення на ваш телефон'
+                icon: 'blue-smile',
+                name: 'Зростає комфорт і енергоефективність будинку'
               }
             ]
           }

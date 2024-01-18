@@ -34,7 +34,7 @@ import WirelessSystem from "~/components/serviceDetails/WirelessSystem.vue";
 import HaveQuestions from "~/components/serviceDetails/HaveQuestions.vue";
 
 export default defineComponent({
-  name: 'Video Surveillance',
+  name: 'VideoSurveillance',
 
   components: {
     HaveQuestions,
@@ -106,28 +106,27 @@ export default defineComponent({
             },
           ]
         },
-        equipment: [
-          {
-            image: 'wireless-system-image',
-            title: 'Детектор пожежі',
-            text: 'Бездротовий пожежний датчик тепла, диму та чадного газу.',
-          },
-          {
-            image: 'wireless-system-image',
-            title: 'Тривожна кнопка',
-            text: 'Бездротова настінна кнопка для активації пожежної тривоги вручну.',
-          },
-          {
-            image: 'wireless-system-image',
-            title: 'Хаб',
-            text: 'Централь з підтримкою бездротових пристроїв.',
-          },
-          {
-            image: 'wireless-system-image',
-            title: 'Система автогасіння',
-            text: 'Автономний, автоматичний модуль порошкового полумʼягасіння.',
-          }
-        ],
+        equipment: {
+          title: 'З чого складається система відеоспостереження',
+          text: 'Пристрої, що входять до системи відеоспостереження. Їх перелік можна змінювати згідно потреб та бюджету.',
+          items: [
+            {
+              image: 'motion-detector',
+              title: 'Датчик руху',
+              text: 'Реагує на рух людини і активує різні події при спрацьовуванні.',
+            },
+            {
+              image: 'video-surveillance',
+              title: 'Камера',
+              text: 'Транслює відео на ваш смартфон чи монітор. Має нічне бачення.',
+            },
+            {
+              image: 'control-center',
+              title: 'Центр керування',
+              text: 'Хаб, що повʼязує усю екосистему і через який керується увесь будинок.',
+            }
+          ]
+        },
         choose: {
           icon: 'white-camera',
           title: 'Як правильно вибрати систему відеоспостереження',
@@ -136,57 +135,49 @@ export default defineComponent({
         },
         automations: [
           {
-            title: 'Трігер: Датчик ідентифікує ненавмисний спалах вогню',
+            title: 'Трігер: Хтось сторонній проник на ваше подвірʼя чи в оселю',
             options: [
               {
-                icon: 'blue-bag',
-                name: 'Активація датчику пожежогасіння в зоні виявлення'
+                icon: 'blue-camera',
+                name: 'Фото та відеофіксація порушника'
               },
               {
-                icon: 'blue-bag',
+                icon: 'blue-alarm',
                 name: 'Сирена'
               },
               {
-                icon: 'blue-bag',
-                name: 'Виклик пожежної безпеки'
-              },
-              {
-                icon: 'blue-bag',
-                name: 'Вимкнення усіх електроприладів'
+                icon: 'blue-iphone',
+                name: 'Повідомлення з фото обличчя порушника на ваш телефон'
               }
             ]
           },
           {
-            title: 'Трігер: Велика концентрація диму та вуглекислого газу у кімнаті',
+            title: 'Трігер: Вам треба переглянути осіб, що знаходилися біля вашої оселі протягом дня',
             options: [
               {
-                icon: 'blue-bag',
-                name: 'Сирена'
+                icon: 'blue-iphone',
+                name: 'Заходите у додаток'
               },
               {
-                icon: 'blue-bag',
-                name: 'Виклик пожежної безпеки'
-              },
-              {
-                icon: 'blue-bag',
-                name: 'Повідомлення на ваш телефон'
+                icon: 'blue-eye',
+                name: 'Переглядаєте запис з камер за поточний день'
               }
             ]
           },
           {
-            title: 'Трігер: Коротке замикання у електромережі',
+            title: 'Трігер: Вам треба тимчасово поставити на паузу усю систему відеоспостереження',
             options: [
               {
-                icon: 'blue-bag',
-                name: 'Ізоляція ділянки замикання'
+                icon: 'blue-iphone',
+                name: 'Заходите у додаток'
               },
               {
-                icon: 'blue-bag',
-                name: 'Знеструмлення приладів'
+                icon: 'blue-shield',
+                name: 'Вмикаєте приватний режим'
               },
               {
-                icon: 'blue-bag',
-                name: 'Повідомлення на ваш телефон'
+                icon: 'blue-bolt',
+                name: 'Уся система відеоспостереження тимчасово вимкнена'
               }
             ]
           }

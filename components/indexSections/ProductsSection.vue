@@ -32,28 +32,11 @@
           <div class="products__item">
             <img src="~/assets/gray-google-home-logo.svg" alt="google home logo">
           </div>
-        </div>
-        <div class="products__companys-wrapper">
           <div class="products__item">
-            <img src="~/assets/gray-xiaomi-logo.svg" alt="xiaomi logo">
+            <img src="~/assets/meross-logo.svg" alt="google home logo">
           </div>
           <div class="products__item">
-            <img src="~/assets/gray-samsung-logo.svg" alt="samsung logo">
-          </div>
-          <div class="products__item">
-            <img src="~/assets/gray-lg-logo.svg" alt="lg logo">
-          </div>
-          <div class="products__item">
-            <img src="~/assets/gray-tuya-logo.svg" alt="tuya logo">
-          </div>
-          <div class="products__item">
-            <img src="~/assets/gray-aqara-logo.svg" alt="aqara logo">
-          </div>
-          <div class="products__item">
-            <img src="~/assets/gray-ewelink-logo.svg" alt="ewelink logo">
-          </div>
-          <div class="products__item">
-            <img src="~/assets/gray-google-home-logo.svg" alt="google home logo">
+            <img src="~/assets/sonoff-logo.svg" alt="google home logo">
           </div>
         </div>
         <div class="products__companys-wrapper">
@@ -77,6 +60,41 @@
           </div>
           <div class="products__item">
             <img src="~/assets/gray-google-home-logo.svg" alt="google home logo">
+          </div>
+          <div class="products__item">
+            <img src="~/assets/meross-logo.svg" alt="google home logo">
+          </div>
+          <div class="products__item">
+            <img src="~/assets/sonoff-logo.svg" alt="google home logo">
+          </div>
+        </div>
+        <div class="products__companys-wrapper">
+          <div class="products__item">
+            <img src="~/assets/gray-xiaomi-logo.svg" alt="xiaomi logo">
+          </div>
+          <div class="products__item">
+            <img src="~/assets/gray-samsung-logo.svg" alt="samsung logo">
+          </div>
+          <div class="products__item">
+            <img src="~/assets/gray-lg-logo.svg" alt="lg logo">
+          </div>
+          <div class="products__item">
+            <img src="~/assets/gray-tuya-logo.svg" alt="tuya logo">
+          </div>
+          <div class="products__item">
+            <img src="~/assets/gray-aqara-logo.svg" alt="aqara logo">
+          </div>
+          <div class="products__item">
+            <img src="~/assets/gray-ewelink-logo.svg" alt="ewelink logo">
+          </div>
+          <div class="products__item">
+            <img src="~/assets/gray-google-home-logo.svg" alt="google home logo">
+          </div>
+          <div class="products__item">
+            <img src="~/assets/meross-logo.svg" alt="google home logo">
+          </div>
+          <div class="products__item">
+            <img src="~/assets/sonoff-logo.svg" alt="google home logo">
           </div>
         </div>
       </div>

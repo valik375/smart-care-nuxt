@@ -34,7 +34,7 @@ import WirelessSystem from "~/components/serviceDetails/WirelessSystem.vue";
 import HaveQuestions from "~/components/serviceDetails/HaveQuestions.vue";
 
 export default defineComponent({
-  name: 'Smart Light',
+  name: 'SmartLight',
 
   components: {
     HaveQuestions,
@@ -106,28 +106,37 @@ export default defineComponent({
             },
           ]
         },
-        equipment: [
-          {
-            image: 'wireless-system-image',
-            title: 'Детектор пожежі',
-            text: 'Бездротовий пожежний датчик тепла, диму та чадного газу.',
-          },
-          {
-            image: 'wireless-system-image',
-            title: 'Тривожна кнопка',
-            text: 'Бездротова настінна кнопка для активації пожежної тривоги вручну.',
-          },
-          {
-            image: 'wireless-system-image',
-            title: 'Хаб',
-            text: 'Централь з підтримкою бездротових пристроїв.',
-          },
-          {
-            image: 'wireless-system-image',
-            title: 'Система автогасіння',
-            text: 'Автономний, автоматичний модуль порошкового полумʼягасіння.',
-          }
-        ],
+        equipment: {
+          title: 'З чого складається контроль освітлення',
+          text: 'Пристрої, що входять до системи контролю освітлення. Їх перелік можна змінювати згідно потреб та бюджету.',
+          items: [
+            {
+              image: 'smart-light',
+              title: 'Реле керування освітленням',
+              text: 'Забезпечує автоматизацію керування світлом та ел. приладами.',
+            },
+            {
+              image: 'smart-switch',
+              title: 'Розумний вимикач',
+              text: 'Можна керувати через додатки сумісні з екосистемою Aqara.',
+            },
+            {
+              image: 'smart-light-bulb',
+              title: 'Розумна лампочка',
+              text: 'Керується віддалено, може змінювати колір та реагувати на рух.',
+            },
+            {
+              image: 'rgb-tape',
+              title: 'RGB стрічка',
+              text: 'Монтується у необхідні зони приміщення і керується віддалено.',
+            },
+            {
+              image: 'server',
+              title: 'Сервер',
+              text: 'Синхронізує роботу усих пристроїв розумного будинку.',
+            }
+          ]
+        },
         choose: {
           icon: 'white-light',
           title: 'Система освітлення розумного будинку: як вибрати',
@@ -137,57 +146,45 @@ export default defineComponent({
         },
         automations: [
           {
-            title: 'Трігер: Датчик ідентифікує ненавмисний спалах вогню',
+            title: 'Трігер: Ви лягаєте спати',
             options: [
               {
-                icon: 'blue-bag',
-                name: 'Активація датчику пожежогасіння в зоні виявлення'
+                icon: 'blue-moon',
+                name: 'Дім переходить у режим “Ніч”'
               },
               {
-                icon: 'blue-bag',
-                name: 'Сирена'
-              },
-              {
-                icon: 'blue-bag',
-                name: 'Виклик пожежної безпеки'
-              },
-              {
-                icon: 'blue-bag',
-                name: 'Вимкнення усіх електроприладів'
+                icon: 'blue-light',
+                name: 'Вимикається усе освітлення у будинку'
               }
             ]
           },
           {
-            title: 'Трігер: Велика концентрація диму та вуглекислого газу у кімнаті',
+            title: 'Трігер: Ви хочете почитати книгу',
             options: [
               {
-                icon: 'blue-bag',
-                name: 'Сирена'
+                icon: 'blue-microphone',
+                name: 'Команда “Збільши яскравість освітлення”'
               },
               {
-                icon: 'blue-bag',
-                name: 'Виклик пожежної безпеки'
-              },
-              {
-                icon: 'blue-bag',
-                name: 'Повідомлення на ваш телефон'
+                icon: 'blue-light',
+                name: 'Яскравість освітлення збільшилася у кімнаті, в якій ви знаходитеся'
               }
             ]
           },
           {
-            title: 'Трігер: Коротке замикання у електромережі',
+            title: 'Трігер: Ви знаходитеся на роботі і не впевнені, чи вимкнули світло вдома',
             options: [
               {
-                icon: 'blue-bag',
-                name: 'Ізоляція ділянки замикання'
+                icon: 'blue-iphone',
+                name: 'Ви відкриваєте мобільний додаток вашого розумного будинку'
               },
               {
-                icon: 'blue-bag',
-                name: 'Знеструмлення приладів'
+                icon: 'blue-eye',
+                name: 'Перевіряєте статус засобів освітлення'
               },
               {
-                icon: 'blue-bag',
-                name: 'Повідомлення на ваш телефон'
+                icon: 'blue-bolt',
+                name: 'Вимикаєте світло'
               }
             ]
           }

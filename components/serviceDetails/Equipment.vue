@@ -4,20 +4,21 @@
       <div class="equipment__info">
         <div class="equipment__title-wrapper section-title-wrapper">
           <h3 class="equipment__subtitle section-subtitle">Обладнання</h3>
-          <h2 class="equipment__title section-title">З чого складається система пожежної безпеки</h2>
+          <h2 class="equipment__title section-title">{{ section.title }}</h2>
         </div>
-        <p class="equipment__text text">Пристрої, що входять до системи пожежної безпеки. Їх перелік можна змінювати згідно потреб та бюджету.</p>
+        <p class="equipment__text text">{{ section.text }}</p>
       </div>
       <div class="equipment__swiper-wrapper">
         <Swiper
           class="equipment-swiper"
+          :modules="modules"
           :options="swiperOptions"
           :breakpoints="swiperOptions.breakpoints"
           :slides-per-view="swiperOptions.slidesPerView"
           :navigation="swiperOptions.navigation"
           :space-between="16"
         >
-          <SwiperSlide v-for="(item, index) in section" :key="index">
+          <SwiperSlide v-for="(item, index) in section.items" :key="index">
             <EquipmentItem :item="item" />
           </SwiperSlide>
         </Swiper>
@@ -51,9 +52,10 @@
   </section>
 </template>
 
-<script lang="ts">
+<script>
 import {defineComponent} from 'vue'
-import EquipmentItem from "~/components/serviceDetails/EquipmentItem.vue";
+import { Navigation } from 'swiper/modules'
+import EquipmentItem from '~/components/serviceDetails/EquipmentItem.vue'
 
 export default defineComponent({
   name: 'Equipment',
@@ -69,13 +71,10 @@ export default defineComponent({
     }
   },
 
-  methods: {
-    prevSlide() {
-      document.querySelector('.equipment-swiper').swiper.slidePrev()
-    },
-    nextSlide() {
-      document.querySelector('.equipment-swiper').swiper.slideNext()
-    },
+  data() {
+    return {
+      modules: [Navigation]
+    }
   },
 
   computed: {
@@ -88,8 +87,6 @@ export default defineComponent({
           prevEl: '.equipment__swiper-prev',
           nextEl: '.equipment__swiper-next',
         },
-        slideNextClass: '.about-us-portfolio__swiper-next',
-        slidePrevClass: '.about-us-portfolio__swiper-prev',
         breakpoints: {
           540: {
             slidesPerView: 2,
