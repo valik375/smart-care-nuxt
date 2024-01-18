@@ -35,12 +35,14 @@ export default defineComponent({
   },
 
   created() {
-    setTimeout(() => {
-      const cookie = JSON.parse(localStorage.getItem('cookie'))
-      if (cookie?.isApproved) {
-        this.isCookieModalOpen = false
-      }
-    }, 100)
+    if (process.client) {
+      setTimeout(() => {
+        const cookie = JSON.parse(localStorage.getItem('cookie'))
+        if (cookie?.isApproved) {
+          this.isCookieModalOpen = false
+        }
+      }, 100)
+    }
   },
 
   data() {

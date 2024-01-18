@@ -59,13 +59,6 @@
 
 <script>
 import {defineComponent} from 'vue'
-import SimpleDropdown from "~/UI/SimpleDropdown.vue";
-import Accordion from "~/UI/Accordion.vue";
-import DropdownLink from "~/UI/DropdownLink.vue";
-import ArrowLink from "~/UI/ArrowLink.vue";
-import CalculateButton from "~/UI/CalculateButton.vue";
-import MobileLink from "~/UI/MobileLink.vue";
-import DesktopLink from "~/UI/DesktopLink.vue";
 import Button from "~/UI/Button.vue";
 import Modal from "~/UI/Modal.vue";
 import Input from "~/UI/Input.vue";
@@ -105,7 +98,9 @@ export default defineComponent({
         marketing: this.cookieMarketing,
         social: this.cookieSocial
       }
-      localStorage.setItem('cookie', JSON.stringify(cookieSettings))
+      if (process.client) {
+        localStorage.setItem('cookie', JSON.stringify(cookieSettings))
+      }
       this.toggleCookieModal()
     }
   },
