@@ -19,13 +19,27 @@ export default defineNuxtConfig({
       ]
     }
   },
-  sitemap: {
+  site: {
+    url: 'thecaresmart.com',
     path: '/sitemap.xml',
     hostname: 'http://localhost:3000',
     gzip: true,
     cacheTime: '1000 * 60 * 15',
     exclude: [],
   },
+  nitro: {
+    prerender: {
+      failOnError: false,
+    },
+  },
+  // sitemap: {
+  //   url: 'thecaresmart.com',
+  //   path: '/sitemap.xml',
+  //   hostname: 'http://localhost:3000',
+  //   gzip: true,
+  //   cacheTime: '1000 * 60 * 15',
+  //   exclude: [],
+  // },
   runtimeConfig: {
     public: {
       gtagId: 'GTM-5PPVS337',

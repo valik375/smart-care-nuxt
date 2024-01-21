@@ -1,4 +1,5 @@
 <template>
+  <Loader v-if="loading"/>
   <Banner :section="template.banner" />
   <Benefits :section="template.benefits" />
   <Functions :section="template.functions" />
@@ -28,11 +29,13 @@ import Automations from "~/components/serviceDetails/Automations.vue";
 import EcoSystem from "~/components/serviceDetails/EcoSystem.vue";
 import HaveQuestionsSection from "~/components/indexSections/HaveQuestionsSection.vue";
 import BuildSystemSection from "~/components/indexSections/BuildSystemSection.vue";
+import Loader from "~/UI/Loader.vue";
 
 export default defineComponent({
   name: 'ServiceDetails',
 
   components: {
+    Loader,
     BuildSystemSection,
     HaveQuestionsSection,
     EcoSystem,
@@ -47,6 +50,7 @@ export default defineComponent({
 
   data() {
     return {
+      loading: true,
       template: {
         banner: {
           image: 'security-function-2',
@@ -182,6 +186,12 @@ export default defineComponent({
         ],
       }
     }
+  },
+
+  mounted() {
+    setTimeout(() => {
+      this.loading = false
+    }, 300)
   }
 
 })

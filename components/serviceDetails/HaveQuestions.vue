@@ -7,7 +7,7 @@
           <div class="have-questions__card card">
             <h2 class="have-questions__title">Залишились питання?</h2>
             <p class="have-questions__text text">Якщо ви не знайшли відповіді на своє питання - зв'яжіться з
-              нами для детальної консультації. Ми завжді раді допомогти!</p>
+              нами для детальної консультації. Ми завжди раді допомогти!</p>
             <button class="have-questions__button button blue" @click="toggleConsultationModal">
               <span>Безкоштовна консультація</span>
               <img src="~/assets/white-arrow-right.svg" alt="Arrow Icon">

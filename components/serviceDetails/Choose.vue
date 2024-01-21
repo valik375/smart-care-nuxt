@@ -117,6 +117,7 @@ export default defineComponent({
     background: $dark-600;
     transform: translate(-50%, -50%);
     border-radius: 100px;
+    box-shadow: 0 0 100px 30px rgba(0, 0, 0, 0.87);
 
     img {
       width: 24px;

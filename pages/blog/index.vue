@@ -130,7 +130,7 @@ export default defineComponent({
   transition: all .3s ease;
 
   &:hover {
-    border-color: $dark-500;
+    border-color: $dark-550;
     background: $dark-700;
   }
 

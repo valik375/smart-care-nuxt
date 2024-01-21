@@ -291,6 +291,10 @@ export default defineComponent({
   &:hover {
     color: $dark-500;
   }
+
+  @media only screen and (min-width: 1160px) {
+    white-space: nowrap;
+  }
 }
 
 .footer__consultation {

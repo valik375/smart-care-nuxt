@@ -64,6 +64,13 @@ export default defineComponent({
   }
 }
 .post-card__item {
+  border: 1px solid transparent;
+  transition: all .3s ease;
+
+  &:hover {
+    border-color: $dark-550;
+    background: $dark-700;
+  }
 
   @media only screen and (min-width: 760px) {
     width: calc(50% - 8px);

@@ -1,4 +1,5 @@
 <template>
+  <Loader v-if="loading" />
   <Banner :section="template.banner" />
   <Benefits :section="template.benefits" />
   <Functions :section="template.functions" />
@@ -31,11 +32,13 @@ import HaveQuestionsSection from "~/components/indexSections/HaveQuestionsSectio
 import BuildSystemSection from "~/components/indexSections/BuildSystemSection.vue";
 import WirelessSystem from "~/components/serviceDetails/WirelessSystem.vue";
 import HaveQuestions from "~/components/serviceDetails/HaveQuestions.vue";
+import Loader from "~/UI/Loader.vue";
 
 export default defineComponent({
   name: 'SmartIntercom',
 
   components: {
+    Loader,
     HaveQuestions,
     WirelessSystem,
     BuildSystemSection,
@@ -52,6 +55,7 @@ export default defineComponent({
 
   data() {
     return {
+      loading: true,
       template: {
         banner: {
           image: 'security-function-6',
@@ -232,6 +236,12 @@ export default defineComponent({
         ]
       }
     }
+  },
+
+  mounted() {
+    setTimeout(() => {
+      this.loading = false
+    }, 300)
   }
 
 })

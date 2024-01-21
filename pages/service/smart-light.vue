@@ -1,4 +1,5 @@
 <template>
+  <Loader v-if="loading" />
   <Banner :section="template.banner" />
   <Benefits :section="template.benefits" />
   <Functions :section="template.functions" />
@@ -32,11 +33,13 @@ import BuildSystemSection from "~/components/indexSections/BuildSystemSection.vu
 import WirelessSystemSection from "~/components/indexSections/WirelessSystemSection.vue";
 import WirelessSystem from "~/components/serviceDetails/WirelessSystem.vue";
 import HaveQuestions from "~/components/serviceDetails/HaveQuestions.vue";
+import Loader from "~/UI/Loader.vue";
 
 export default defineComponent({
   name: 'SmartLight',
 
   components: {
+    Loader,
     HaveQuestions,
     WirelessSystem,
     WirelessSystemSection,
@@ -54,6 +57,7 @@ export default defineComponent({
 
   data() {
     return {
+      loading: true,
       template: {
         banner: {
           image: 'comfort-function-1',
@@ -111,11 +115,6 @@ export default defineComponent({
           text: 'Пристрої, що входять до системи контролю освітлення. Їх перелік можна змінювати згідно потреб та бюджету.',
           items: [
             {
-              image: 'smart-light',
-              title: 'Реле керування освітленням',
-              text: 'Забезпечує автоматизацію керування світлом та ел. приладами.',
-            },
-            {
               image: 'smart-switch',
               title: 'Розумний вимикач',
               text: 'Можна керувати через додатки сумісні з екосистемою Aqara.',
@@ -133,7 +132,7 @@ export default defineComponent({
             {
               image: 'server',
               title: 'Сервер',
-              text: 'Синхронізує роботу усих пристроїв розумного будинку.',
+              text: 'Синхронізує роботу усіх пристроїв розумного будинку.',
             }
           ]
         },
@@ -242,6 +241,12 @@ export default defineComponent({
         ]
       }
     }
+  },
+
+  mounted() {
+    setTimeout(() => {
+      this.loading = false
+    }, 300)
   }
 
 })

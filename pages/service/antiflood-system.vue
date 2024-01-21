@@ -1,4 +1,5 @@
 <template>
+  <Loader v-if="loading"/>
   <Banner :section="template.banner" />
   <Benefits :section="template.benefits" />
   <Functions :section="template.functions" />
@@ -31,11 +32,13 @@ import HaveQuestionsSection from "~/components/indexSections/HaveQuestionsSectio
 import BuildSystemSection from "~/components/indexSections/BuildSystemSection.vue";
 import WirelessSystem from "~/components/serviceDetails/WirelessSystem.vue";
 import HaveQuestions from "~/components/serviceDetails/HaveQuestions.vue";
+import Loader from "~/UI/Loader.vue";
 
 export default defineComponent({
   name: 'AntifloodSystem',
 
   components: {
+    Loader,
     HaveQuestions,
     WirelessSystem,
     BuildSystemSection,
@@ -52,6 +55,7 @@ export default defineComponent({
 
   data() {
     return {
+      loading: true,
       template: {
         banner: {
           image: 'security-function-3',
@@ -127,7 +131,7 @@ export default defineComponent({
             {
               image: 'server',
               title: 'Сервер',
-              text: 'Синхронізує роботу усих пристроїв розумного будинку.',
+              text: 'Синхронізує роботу усіх пристроїв розумного будинку.',
             }
           ]
         },
@@ -135,10 +139,10 @@ export default defineComponent({
           icon: 'white-drop',
           title: 'Як правильно обрати систему антипотопу',
           text: 'Системи антипотопу існують декількох видів: ті, що розпізнають потоп і перекривають подачу води по факту його ' +
-            'здійснення на ранній стадії та такі, що можуть зпрогнозувати потоп заздалегідь, перекривши воду ще до його початку. ' +
+            'здійснення на ранній стадії та такі, що можуть спрогнозувати потоп заздалегідь, перекривши воду ще до його початку. ' +
             'Ми встановлюємо обидва типи систем, але завжди рекомендуємо нашим клієнтам другий, адже це найбільш комплексний варіант, ' +
             'що суттєво зекономить ваші гроші при потенційних ризиках. \n' +
-            'Зазвичай, система антипотопу складається з 3-х основних складових: це датчики, контролери та розумні крани. ' +
+            'Зазвичай система антипотопу складається з 3-х основних складових: це датчики, контролери та розумні крани. ' +
             'Кожна з них має свою низку характеристик. Ми допоможемо підібрати найкраще рішення для вашого випадку на безкоштовні консультації.',
         },
         automations: [
@@ -259,8 +263,13 @@ export default defineComponent({
         ]
       }
     }
-  }
+  },
 
+  mounted() {
+    setTimeout(() => {
+      this.loading = false
+    }, 300)
+  }
 })
 </script>
 

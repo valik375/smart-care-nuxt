@@ -40,6 +40,8 @@ export default defineComponent({
         const cookie = JSON.parse(localStorage.getItem('cookie'))
         if (cookie?.isApproved) {
           this.isCookieModalOpen = false
+        } else {
+          this.isCookieModalOpen = true
         }
       }, 100)
     }
@@ -51,64 +53,64 @@ export default defineComponent({
       isConsultationModalOpen: false,
       isConfirmModalOpen: false,
       isScenarioModalOpen: false,
-      isCookieModalOpen: true,
+      isCookieModalOpen: false,
       serviceLinks: [
         {
-          title: 'ФУНКЦІЇ БЕЗПЕКИ',
+          title: 'Функції безпеки',
           titleShort: 'БЕЗПЕКА',
           type: 'security',
           links: [
             {
               icon: 'white-fire',
               text: 'Протипожежна система',
-              url: 'service/fire-protection-system'
+              url: '/service/fire-protection-system'
             },
             {
               icon: 'white-drop',
               text: 'Антипотоп система',
-              url: 'service/antiflood-system',
+              url: '/service/antiflood-system',
             },
             {
               icon: 'white-lock',
               text: 'Розумні замки',
-              url: 'service/smart-lock',
+              url: '/service/smart-lock',
             },
             {
               icon: 'white-camera',
               text: 'Система Відеоспостереження',
-              url: 'service/video-surveillance',
+              url: '/service/video-surveillance',
             },
             {
               icon: 'white-intercom',
               text: 'Розумний домофон',
-              url: 'service/smart-intercom',
+              url: '/service/smart-intercom',
             },
           ]
         },
         {
-          title: 'функції комфорту',
+          title: 'Функції комфорту',
           titleShort: 'КОМФОРТ',
           type: 'comfort',
           links: [
             {
               icon: 'white-light',
               text: 'Розумне освітлення',
-              url: 'service/smart-light',
+              url: '/service/smart-light',
             },
             {
               icon: 'white-heating',
               text: 'Розумне опалення',
-              url: 'service/smart-heating',
+              url: '/service/smart-heating',
             },
             {
               icon: 'white-blinds',
               text: 'Автоматичні штори',
-              url: 'service/automatic-curtains',
+              url: '/service/automatic-curtains',
             },
             {
               icon: 'white-micro',
               text: 'Голосове управління',
-              url: 'service/voice-control',
+              url: '/service/voice-control',
             },
           ]
         }

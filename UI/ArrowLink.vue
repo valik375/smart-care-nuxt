@@ -49,7 +49,7 @@ export default defineComponent({
     line-height: 150%;
     color: #84899A;
     margin-right: 4px;
-    text-transform: lowercase;
+    text-transform: capitalize;
   }
 
   @media only screen and (min-width: 1160px) {

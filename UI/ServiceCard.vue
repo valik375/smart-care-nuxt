@@ -64,7 +64,7 @@ export default defineComponent({
   cursor: pointer;
 
   &:hover {
-    border-color: $dark-500;
+    border-color: $dark-550;
 
     .service-page__item-icon {
       background: $dark-500;
