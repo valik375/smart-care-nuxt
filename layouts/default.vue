@@ -77,7 +77,7 @@ export default defineComponent({
             },
             {
               icon: 'white-camera',
-              text: 'Система Відеоспостереження',
+              text: 'Система відеоспостереження',
               url: '/service/video-surveillance',
             },
             {

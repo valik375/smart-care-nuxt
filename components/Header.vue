@@ -333,6 +333,11 @@ export default defineComponent({
 .simple-dropdown__company :deep(.simple-dropdown-body) {
   max-width: 200px;
 }
+.simple-dropdown__company {
+ .button {
+   background: transparent !important;
+ }
+}
 :deep(.header-desktop__service) {
   .simple-dropdown-body {
     width: 700px;
@@ -366,6 +371,10 @@ export default defineComponent({
   }
   .services__calculate {
     padding: 24px 32px;
+  }
+
+  .button {
+    background: transparent !important;
   }
 }
 .header__wrapper.desktop .header__desktop-button {

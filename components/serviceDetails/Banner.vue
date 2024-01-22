@@ -1,24 +1,27 @@
 <template>
   <section class="banner">
-    <div class="banner__container container">
-      <div class="banner__wrapper">
-        <div class="banner__badge">
-          <div class="banner__badge-icon">
-            <img src="~/assets/white-dollar.svg" alt="Dollar Icon">
+    <div class="container">
+      <BreadCrumbs class="banner__breadcrumbs" :list="[{ name: 'Послуги ', path: '/service' }, { name: section.title, path: ''}]" />
+      <div class="banner__container">
+        <div class="banner__wrapper">
+          <div class="banner__badge">
+            <div class="banner__badge-icon">
+              <img src="~/assets/white-dollar.svg" alt="Dollar Icon">
+            </div>
+            <div class="banner__text">Ціна під ключ Від {{ section.price }}$</div>
           </div>
-          <div class="banner__text">Ціна під ключ Від {{ section.price }}$</div>
+          <h1 class="banner__title">{{ section.title }}</h1>
+          <p class="banner__subtitle text">{{ section.text }}</p>
+          <button class="banner__button button blue consultation" @click="toggleConsultationModal">
+            Замовити послугу
+            <img src="~/assets/white-arrow-right.svg" alt="Icon">
+          </button>
         </div>
-        <h1 class="banner__title">{{ section.title }}</h1>
-        <p class="banner__subtitle text">{{ section.text }}</p>
-        <button class="banner__button button blue consultation" @click="toggleConsultationModal">
-          Замовити послугу
-          <img src="~/assets/white-arrow-right.svg" alt="Icon">
-        </button>
-      </div>
-      <div class="banner__image">
-        <AsyncImage class="banner__image-bg" :img="section.image" alt="Banner Image" />
-        <div class="banner__icon">
-          <AsyncImage :svg="section.icon" alt="Fire Icon" />
+        <div class="banner__image">
+          <AsyncImage class="banner__image-bg" :img="section.image" alt="Banner Image" />
+          <div class="banner__icon">
+            <AsyncImage :svg="section.icon" alt="Fire Icon" />
+          </div>
         </div>
       </div>
     </div>
@@ -28,10 +31,11 @@
 <script lang="ts">
 import {defineComponent} from 'vue'
 import AsyncImage from "~/UI/AsyncImage.vue";
+import Loader from "~/UI/Loader.vue";
 
 export default defineComponent({
   name: 'Banner',
-  components: {AsyncImage},
+  components: {Loader, AsyncImage},
 
   inject: ['toggleConsultationModal'],
 
@@ -48,10 +52,18 @@ export default defineComponent({
 @import 'vars';
 
 .banner {
-  padding: 180px 0 40px;
+  padding: 120px 0 40px;
 
   @media only screen and (min-width: 1160px) {
     padding: 192px 0 88px;
+  }
+}
+
+.banner__breadcrumbs {
+  margin-bottom: 24px;
+
+  @media only screen and (min-width: 1160px) {
+    margin-bottom: 40px;
   }
 }
 
