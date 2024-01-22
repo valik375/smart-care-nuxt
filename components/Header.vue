@@ -128,7 +128,7 @@
         </Accordion>
         <MobileLink url="/calculator" @click="toggleMenu">Розрахувати вартість</MobileLink>
         <MobileLink url="/about-us" @click="toggleMenu">Про нас</MobileLink>
-        <MobileLink url="/blog" @click="toggleMenu">Блог</MobileLink>
+<!--        <MobileLink url="/blog" @click="toggleMenu">Блог</MobileLink>-->
         <MobileLink url="/contacts" @click="toggleMenu">Контакти</MobileLink>
         <MobileLink href="tel:+380983125981">
           <img class="mobile-link__phone" src="~/assets/white-phone.svg" alt="Icon">
@@ -220,12 +220,12 @@
               icon="white-info"
               @click="props.toggleVisibility"
             />
-            <DropdownLink
-              url="/blog"
-              text="Блог"
-              icon="white-message"
-              @click="props.toggleVisibility"
-            />
+<!--            <DropdownLink-->
+<!--              url="/blog"-->
+<!--              text="Блог"-->
+<!--              icon="white-message"-->
+<!--              @click="props.toggleVisibility"-->
+<!--            />-->
             <DropdownLink
               url="/contacts"
               text="Контакти"

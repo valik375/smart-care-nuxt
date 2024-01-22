@@ -56,7 +56,7 @@
               <NuxtLink class="footer__nav-item" to="/service?type=security">Функції безпеки</NuxtLink>
               <NuxtLink class="footer__nav-item" to="/service?type=comfort">Функції комфорту</NuxtLink>
               <NuxtLink class="footer__nav-item" to="/about-us">Про нас</NuxtLink>
-              <NuxtLink class="footer__nav-item" to="/blog">Блог</NuxtLink>
+<!--              <NuxtLink class="footer__nav-item" to="/blog">Блог</NuxtLink>-->
               <NuxtLink class="footer__nav-item" to="/contacts">Контакти</NuxtLink>
               <NuxtLink class="footer__nav-item" to="/calculator">Розрахувати прайс</NuxtLink>
             </div>
