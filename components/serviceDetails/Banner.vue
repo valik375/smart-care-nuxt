@@ -1,7 +1,7 @@
 <template>
   <section class="banner">
     <div class="container">
-      <BreadCrumbs class="banner__breadcrumbs" :list="[{ name: 'Послуги ', path: '/service' }, { name: section.title, path: ''}]" />
+      <BreadCrumbs class="banner__breadcrumbs" :list="[{ name: section.service, path: '/service' }, { name: section.title, path: ''}]" />
       <div class="banner__container">
         <div class="banner__wrapper">
           <div class="banner__badge">
