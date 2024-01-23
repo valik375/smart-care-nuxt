@@ -109,8 +109,10 @@ export default defineComponent({
 
 :deep(.swiper-backface-hidden) {
 
-  .swiper-wrapper {
-    justify-content: center !important;
+  @media only screen and (min-width: 1260px) {
+    .swiper-wrapper {
+      justify-content: center !important;
+    }
   }
 }
 

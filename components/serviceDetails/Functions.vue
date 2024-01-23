@@ -17,7 +17,7 @@
           <p class="functions__text text">{{ section.text }}</p>
         </div>
         <div class="functions__image column-image">
-          <img loading="lazy" :src="section.image" alt="Card with wireless signal">
+          <AsyncImage :img="section.image" alt="Function Image"/>
         </div>
 
         <div class="functions__dropdown-list dropdown-list">

@@ -165,6 +165,7 @@ export default defineComponent({
 }
 
 body {
+  width: 100vw;
   background: $dark-900;
   overflow-x: hidden;
 
