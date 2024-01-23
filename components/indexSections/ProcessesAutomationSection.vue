@@ -66,6 +66,7 @@ export default defineComponent({
 }
 
 .processes-automation__container {
+  overflow: hidden;
 
   @media only screen and (min-width: 1160px) {
     display: flex;

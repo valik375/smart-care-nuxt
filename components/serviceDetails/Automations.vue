@@ -241,7 +241,19 @@ export default defineComponent({
 .automations__tooltip {
 
   :deep(.tooltip__message) {
-    width: 400px;
+    width: max-content;
+    max-width: 340px;
+    transform: translate(-100%, -50%);
+    left: 20px;
+    top: calc(100% + 50px);
+  }
+
+  @media only screen and (min-width: 1160px) {
+    :deep(.tooltip__message) {
+      width: 400px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 }
 </style>

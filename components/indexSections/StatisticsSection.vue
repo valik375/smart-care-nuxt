@@ -79,6 +79,7 @@ export default defineComponent({
 }
 
 .statistics__background-transparent {
+  display: none;
   position: absolute;
   width: 110%;
   height: 100%;
@@ -89,6 +90,10 @@ export default defineComponent({
   opacity: .3;
   z-index: 0;
   pointer-events: none;
+
+  @media only screen and (min-width: 1160px) {
+    display: block;
+  }
 }
 
 .statistics__container {

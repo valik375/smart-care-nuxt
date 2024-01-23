@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     layoutTransition: false,
     head: {
       charset: 'utf-8',
-      viewport: 'width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0',
+      viewport: 'width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1',
       link: [
         { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon_16.png' },
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon_32.png' },
