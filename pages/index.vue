@@ -13,7 +13,7 @@
   <SaveBillSection />
   <StatisticsSection/>
   <HaveQuestionsSection />
-  <BlogSection />
+<!--  <BlogSection />-->
   <BuildSystemSection isSeoText />
 </template>
 

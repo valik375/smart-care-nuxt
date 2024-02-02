@@ -4,11 +4,12 @@
     <div class="about-us-banner__container container bg-lines">
       <div class="about-us-banner__banner">
         <SectionTitle
+          class="about-us-banner__info"
           subtitle="Про нас"
           title="Ми дбаємо про вашу безпеку та комфорт"
           text="Ми – експерти в установці систем розумного будинку, що забезпечують вашому житлу безпеку, ефективність та комфорт."
         />
-        <img class="about-us-banner__image image-loaded" src="~/assets/about-us-banner.png" alt="Image">
+        <img class="about-us-banner__image image-loaded" src="~/assets/team-photo.png" alt="Team Image">
       </div>
 
       <div class="about-us-statistic">
@@ -76,27 +77,35 @@ export default defineComponent({
   }
 }
 
-.about-us-banner__banner {
-  padding-top: 116px;
-  padding-bottom: 56px;
-  text-align: center;
-
-  :deep(.section-title__title) {
-    font-size: 40px;
-    line-height: 150%;
-    letter-spacing: .8px;
-  }
+.about-us-banner__info {
 
   @media only screen and (min-width: 760px) {
-    max-width: 620px;
+    max-width: 640px;
     margin: 0 auto;
     display: block;
-    padding-bottom: 80px;
+
+    :deep(.section-title__title) {
+      font-size: 40px;
+    }
+
+    :deep(.section-title__text) {
+      padding: 0 30px;
+    }
+  }
+}
+
+.about-us-banner__banner {
+  padding-top: 116px;
+  padding-bottom: 24px;
+  text-align: center;
+
+  @media only screen and (min-width: 760px) {
+    display: block;
+    padding-bottom: 32px;
     padding-top: 190px;
   }
 
   @media only screen and (min-width: 1160px) {
-    padding-bottom: 163px;
     padding-top: 196px;
   }
 }
@@ -131,6 +140,12 @@ export default defineComponent({
   width: 100%;
   object-fit: contain;
   margin-top: 32px;
+  border-radius: 12px;
+  overflow: hidden;
+
+  @media only screen and (min-width: 760px) {
+    margin-top: 48px;
+  }
 }
 
 .about-us-statistic__wrapper {

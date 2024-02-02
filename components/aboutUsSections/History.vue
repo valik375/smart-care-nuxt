@@ -45,10 +45,10 @@ export default defineComponent({
   background: $dark-950;
 }
 .about-us-history__container {
-  padding: 50px 0;
+  padding: 50px 20px;
 
   @media only screen and (min-width: 760px) {
-    padding: 100px 0;
+    padding: 100px 30px;
   }
 
   @media only screen and (min-width: 1160px) {

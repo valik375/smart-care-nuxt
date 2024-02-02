@@ -23,52 +23,45 @@
           </SwiperSlide>
           <SwiperSlide class="about-us-team__swiper-slide card">
             <div class="about-us-team__swiper-image">
-              <img src="~/assets/about-us-team-2.png" alt="Віталій Троїцький">
+              <img src="~/assets/about-us-team-2.png" alt="Осіпов Сергій">
             </div>
-            <div class="about-us-team__swiper-name">Максим Богун</div>
-            <div class="about-us-team__swiper-text text">Голова відділу консультування</div>
+            <div class="about-us-team__swiper-name">Осіпов Сергій</div>
+            <div class="about-us-team__swiper-text text">Головний майстер</div>
           </SwiperSlide>
           <SwiperSlide class="about-us-team__swiper-slide card">
             <div class="about-us-team__swiper-image">
-              <img src="~/assets/about-us-team-3.png" alt="Віталій Троїцький">
+              <img src="~/assets/about-us-team-3.png" alt="Скрекотень Владислав">
             </div>
-            <div class="about-us-team__swiper-name">Кирило Важинський</div>
-            <div class="about-us-team__swiper-text text">Головний майстер монтажу</div>
+            <div class="about-us-team__swiper-name">Скрекотень Владислав</div>
+            <div class="about-us-team__swiper-text text">Менеджер по зв'язку з клієнтами</div>
           </SwiperSlide>
           <SwiperSlide class="about-us-team__swiper-slide card">
             <div class="about-us-team__swiper-image">
-              <img src="~/assets/about-us-team-4.png" alt="Віталій Троїцький">
+              <img src="~/assets/about-us-team-4.png" alt="Шипшилей Сергій">
             </div>
-            <div class="about-us-team__swiper-name">Маруся Мішутіна</div>
-            <div class="about-us-team__swiper-text text">Проєктувальниця смарт систем</div>
+            <div class="about-us-team__swiper-name">Шипшилей Сергій</div>
+            <div class="about-us-team__swiper-text text">Майстер-інтегратор</div>
           </SwiperSlide>
           <SwiperSlide class="about-us-team__swiper-slide card">
             <div class="about-us-team__swiper-image">
-              <img src="~/assets/about-us-team-5.png" alt="Віталій Троїцький">
+              <img src="~/assets/about-us-team-5.png" alt="Ляшко Владислав">
             </div>
-            <div class="about-us-team__swiper-name">Валентин Замілюхін</div>
-            <div class="about-us-team__swiper-text text">IT департамент</div>
+            <div class="about-us-team__swiper-name">Ляшко Владислав</div>
+            <div class="about-us-team__swiper-text text">Майстер-інтегратор</div>
           </SwiperSlide>
           <SwiperSlide class="about-us-team__swiper-slide card">
             <div class="about-us-team__swiper-image">
-              <img src="~/assets/about-us-team-6.png" alt="Віталій Троїцький">
+              <img src="~/assets/about-us-team-6.png" alt="Клашнікова Владислава">
             </div>
-            <div class="about-us-team__swiper-name">Анна Іванченко</div>
-            <div class="about-us-team__swiper-text text">Голова відділу продажу</div>
+            <div class="about-us-team__swiper-name">Клашнікова Владислава</div>
+            <div class="about-us-team__swiper-text text">Менеджер по зв'язку з клієнтами</div>
           </SwiperSlide>
           <SwiperSlide class="about-us-team__swiper-slide card">
             <div class="about-us-team__swiper-image">
-              <img src="~/assets/about-us-team-7.png" alt="Віталій Троїцький">
+              <img src="~/assets/about-us-team-7.png" alt="Кругляк Інна">
             </div>
-            <div class="about-us-team__swiper-name">Антон Зоревій</div>
-            <div class="about-us-team__swiper-text text">Майстер монтажу</div>
-          </SwiperSlide>
-          <SwiperSlide class="about-us-team__swiper-slide card">
-            <div class="about-us-team__swiper-image">
-              <img src="~/assets/about-us-team-8.png" alt="Віталій Троїцький">
-            </div>
-            <div class="about-us-team__swiper-name">Ілона Кузьменко</div>
-            <div class="about-us-team__swiper-text text">Голова відділу підтримки</div>
+            <div class="about-us-team__swiper-name">Кругляк Інна</div>
+            <div class="about-us-team__swiper-text text">SMM-спеціаліст</div>
           </SwiperSlide>
         </Swiper>
 
@@ -91,7 +84,7 @@ export default defineComponent({
   computed: {
     teamSwiperOptions() {
       return {
-        slidesPerView: 1.2,
+        slidesPerView: 1.25,
         spaceBetween: 12,
         grid: {
           fill: 'row',
@@ -155,6 +148,7 @@ export default defineComponent({
 
 .about-us-team__swiper-slide {
   margin-bottom: 12px;
+  padding: 16px;
 
   @media only screen and (min-width: 1160px) {
     padding: 28px 32px;
@@ -164,7 +158,7 @@ export default defineComponent({
 
 .about-us-team__swiper-image {
   width: 100%;
-  height: 200px;
+  height: 220px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -193,6 +187,9 @@ export default defineComponent({
 
 .about-us-team__swiper-text {
   font-size: 14px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 
   @media only screen and (min-width: 1160px) {
     font-size: 13px;

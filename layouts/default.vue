@@ -614,10 +614,12 @@ body {
     img {
       width: 100%;
       height: 100%;
+      padding: 20px 0;
       object-fit: contain;
     }
 
     @media only screen and (min-width: 1160px) {
+      padding: 0;
       height: 610px;
       margin-bottom: 0;
     }
