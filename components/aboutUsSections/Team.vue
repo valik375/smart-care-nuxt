@@ -19,49 +19,49 @@
               <img src="~/assets/about-us-team-1.png" alt="Віталій Троїцький">
             </div>
             <div class="about-us-team__swiper-name">Віталій Троїцький</div>
-            <div class="about-us-team__swiper-text text">Засновник SmartCare</div>
+            <div class="about-us-team__swiper-text text" title="Засновник SmartCare">Засновник SmartCare</div>
           </SwiperSlide>
           <SwiperSlide class="about-us-team__swiper-slide card">
             <div class="about-us-team__swiper-image">
               <img src="~/assets/about-us-team-2.png" alt="Осіпов Сергій">
             </div>
             <div class="about-us-team__swiper-name">Осіпов Сергій</div>
-            <div class="about-us-team__swiper-text text">Головний майстер</div>
+            <div class="about-us-team__swiper-text text" title="Головний майстер">Головний майстер</div>
           </SwiperSlide>
           <SwiperSlide class="about-us-team__swiper-slide card">
             <div class="about-us-team__swiper-image">
               <img src="~/assets/about-us-team-3.png" alt="Скрекотень Владислав">
             </div>
             <div class="about-us-team__swiper-name">Скрекотень Владислав</div>
-            <div class="about-us-team__swiper-text text">Менеджер по зв'язку з клієнтами</div>
+            <div class="about-us-team__swiper-text text" title="Менеджер по зв'язку з клієнтами">Менеджер по зв'язку з клієнтами</div>
           </SwiperSlide>
           <SwiperSlide class="about-us-team__swiper-slide card">
             <div class="about-us-team__swiper-image">
               <img src="~/assets/about-us-team-4.png" alt="Шипшилей Сергій">
             </div>
             <div class="about-us-team__swiper-name">Шипшилей Сергій</div>
-            <div class="about-us-team__swiper-text text">Майстер-інтегратор</div>
+            <div class="about-us-team__swiper-text text" title="Майстер-інтегратор">Майстер-інтегратор</div>
           </SwiperSlide>
           <SwiperSlide class="about-us-team__swiper-slide card">
             <div class="about-us-team__swiper-image">
               <img src="~/assets/about-us-team-5.png" alt="Ляшко Владислав">
             </div>
             <div class="about-us-team__swiper-name">Ляшко Владислав</div>
-            <div class="about-us-team__swiper-text text">Майстер-інтегратор</div>
+            <div class="about-us-team__swiper-text text" title="Майстер-інтегратор">Майстер-інтегратор</div>
           </SwiperSlide>
           <SwiperSlide class="about-us-team__swiper-slide card">
             <div class="about-us-team__swiper-image">
               <img src="~/assets/about-us-team-6.png" alt="Клашнікова Владислава">
             </div>
             <div class="about-us-team__swiper-name">Клашнікова Владислава</div>
-            <div class="about-us-team__swiper-text text">Менеджер по зв'язку з клієнтами</div>
+            <div class="about-us-team__swiper-text text" title="Менеджер по зв'язку з клієнтами">Менеджер по зв'язку з клієнтами</div>
           </SwiperSlide>
           <SwiperSlide class="about-us-team__swiper-slide card">
             <div class="about-us-team__swiper-image">
               <img src="~/assets/about-us-team-7.png" alt="Кругляк Інна">
             </div>
             <div class="about-us-team__swiper-name">Кругляк Інна</div>
-            <div class="about-us-team__swiper-text text">SMM-спеціаліст</div>
+            <div class="about-us-team__swiper-text text" title="SMM-спеціаліст">SMM-спеціаліст</div>
           </SwiperSlide>
         </Swiper>
 
@@ -190,6 +190,7 @@ export default defineComponent({
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  cursor: pointer;
 
   @media only screen and (min-width: 1160px) {
     font-size: 13px;

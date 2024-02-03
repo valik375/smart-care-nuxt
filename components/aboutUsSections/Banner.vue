@@ -8,6 +8,7 @@
           subtitle="Про нас"
           title="Ми дбаємо про вашу безпеку та комфорт"
           text="Ми – експерти в установці систем розумного будинку, що забезпечують вашому житлу безпеку, ефективність та комфорт."
+          isH1Title
         />
         <img class="about-us-banner__image image-loaded" src="~/assets/team-photo.png" alt="Team Image">
       </div>
@@ -53,6 +54,9 @@ export default defineComponent({
 <style scoped lang="scss">
 @import 'vars';
 
+:deep(.section-title) {
+  margin: 0;
+}
 .about-us-banner__container {
   padding-bottom: 56px;
 

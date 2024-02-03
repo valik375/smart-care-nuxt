@@ -90,7 +90,7 @@
         </div>
         <div class="footer__bottom">
           <div class="footer__bottom-left">
-            <span>© SmartHome усі права захищенні 2023</span>
+            <span>© SmartHome усі права захищенні {{ new Date().getFullYear() }}</span>
           </div>
           <div class="footer__bottom-right">
             <NuxtLink to="/terms-conditions">Terms & Conditions</NuxtLink>

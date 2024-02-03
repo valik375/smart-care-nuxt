@@ -1,7 +1,8 @@
 <template>
   <div class="section-title">
     <h3 class="section-title__subtitle">{{ subtitle }}</h3>
-    <h2 class="section-title__title" v-html="title"></h2>
+    <h1 v-if="isH1Title" class="section-title__title" v-html="title"></h1>
+    <h2 v-else class="section-title__title" v-html="title"></h2>
     <p class="section-title__text text">{{ text }}</p>
   </div>
 </template>
@@ -24,6 +25,10 @@ export default defineComponent({
     text: {
       type: String,
       default: ''
+    },
+    isH1Title: {
+      type: Boolean,
+      default: false
     }
   }
 })
