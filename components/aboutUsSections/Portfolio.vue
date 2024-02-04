@@ -20,6 +20,7 @@
             :slides-per-view="swiperOptions.slidesPerView"
             :navigation="swiperOptions.navigation"
             :space-between="16"
+            :enabled="swiperOptions.enabled"
           >
             <SwiperSlide class="portfolio-slide card">
               <div class="portfolio-slide__image">
