@@ -51,9 +51,9 @@
           </SwiperSlide>
           <SwiperSlide class="about-us-team__swiper-slide card">
             <div class="about-us-team__swiper-image">
-              <img src="~/assets/about-us-team-6.png" alt="Клашнікова Владислава">
+              <img src="~/assets/about-us-team-6.png" alt="Калашнікова Владлена">
             </div>
-            <div class="about-us-team__swiper-name">Клашнікова Владислава</div>
+            <div class="about-us-team__swiper-name">Калашнікова Владлена</div>
             <div class="about-us-team__swiper-text text" title="Менеджер по зв'язку з клієнтами">Менеджер по зв'язку з клієнтами</div>
           </SwiperSlide>
           <SwiperSlide class="about-us-team__swiper-slide card">
@@ -62,6 +62,13 @@
             </div>
             <div class="about-us-team__swiper-name">Кругляк Інна</div>
             <div class="about-us-team__swiper-text text" title="SMM-спеціаліст">SMM-спеціаліст</div>
+          </SwiperSlide>
+          <SwiperSlide class="about-us-team__swiper-slide card">
+            <div class="about-us-team__swiper-image">
+              <img src="~/assets/about-us-team-8.png" alt="Ручка Микита">
+            </div>
+            <div class="about-us-team__swiper-name">Ручка Микита</div>
+            <div class="about-us-team__swiper-text text" title="Менеджер по зв'язку з клієнтами">майстер-інтегратор</div>
           </SwiperSlide>
         </Swiper>
 
