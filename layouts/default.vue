@@ -13,6 +13,7 @@
 
 <script>
 import {defineComponent} from 'vue'
+import { useRoute } from 'vue-router'
 import Header from '~/components/Header.vue'
 import Footer from '~/components/Footer.vue'
 
@@ -32,6 +33,15 @@ export default defineComponent({
       toggleScenarioModal: () => this.toggleScenario(),
       toggleCookieModal: () => this.toggleCookie(),
     }
+  },
+
+  setup() {
+    const route = useRoute()
+    useHead(() => ({
+      link: [
+        { rel: 'canonical', href: `https://thecaresmart.com${route.path}` },
+      ],
+    }))
   },
 
   created() {
