@@ -39,7 +39,7 @@ export default defineComponent({
     const route = useRoute()
     useHead(() => ({
       link: [
-        { rel: 'canonical', href: `https://thecaresmart.com${route.path}` },
+        { rel: 'canonical', href: 'https://thecaresmart.com' },
       ],
     }))
   },
