@@ -88,7 +88,7 @@ export default defineComponent({
             icon: 'white-fire',
             title: 'Протипожежна система',
             text: 'Забезпечує надійний захист від можливого виникнення пожежі шляхом раннього виявлення, сповіщення та вжиття необхідних заходів для зменшення ризику.',
-            price: '420',
+            price: '350',
             url: 'service/fire-protection-system',
           },
           {

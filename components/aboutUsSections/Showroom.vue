@@ -46,6 +46,16 @@
             <div class="about-us-location__item-text text">smarthome101@gmail.com</div>
           </div>
         </a>
+        <div class="about-us-location__item card fop">
+          <div class="about-us-location__item-icon">
+            <img src="~/assets/white-info.svg" alt="Info Icon">
+          </div>
+          <div class="about-us-location__item-content">
+            <div class="about-us-location__item-title">Інформація «Smart care»</div>
+            <div class="about-us-location__item-text text">ФОП Троїцький Віталій Володимирович. Ідентифікаційний код 3594912878. Місцезнаходження: 02160, Україна, 02160, місто Київ, проспект Соборності, будинок 9, квартира 42. Адреса електронної пошти: smarthome101@gmail.com. Діяльність не ліцензується.
+              У вартість будь-яких товарів, робіт, послуг, що пропонуються з боку “Smart Care" необмеженому колу осіб, включено всі податки, передбачені законодавством України.</div>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -143,6 +153,15 @@ export default defineComponent({
   &:hover .about-us-location__item-text {
     color: $white;
     text-decoration: underline;
+  }
+
+  &:last-child {
+    width: 100%;
+
+    &:hover .about-us-location__item-text {
+      color: $dark-500;
+      text-decoration: none;
+    }
   }
 
   @media only screen and (min-width: 1160px) {
